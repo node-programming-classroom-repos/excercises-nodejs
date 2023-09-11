@@ -5,25 +5,28 @@ En variabel är som en namngiven behållare för att lagra data i ett program/en
 I node använder vi nyckelordet "var" eller "let" för att deklarera variabler.
 Rekeommderat är att använda "let".
 
-Exempel: `let age = 25; eller let name = 'Alice';``
+Exempel: 
+
+    let age = 25; eller let name = 'Alice';
 
 
 Datatyper definierar vilken typ av data en variabel kan innehålla.
 
 Vanliga datatyper inkluderar:
-String/Textsträngar: "Hej, världen!"
-Integer/Heltal: 42
-Decimal, Float/Flyttal: 3.14
-Boolean/Booleska värden: true eller false
-Array/Arrayer: [1, 2, 3]
+
+    String/Textsträngar: "Hej, världen!"
+    Integer/Heltal: 42
+    Decimal, Float/Flyttal: 3.14
+    Boolean/Booleska värden: true eller false
+    Array/Arrayer: [1, 2, 3]
 
 Exempel:
 
-`let name = 'Anna';
-let age = 30;
-let temperature = 25.5;
-let isActive = true;
-let numbers = [1, 2, 3, 4];``
+    let name = 'Anna';
+    let age = 30;
+    let temperature = 25.5;
+    let isActive = true;
+    let numbers = [1, 2, 3, 4];
 
 Slide 8: (Operatorer)
 
