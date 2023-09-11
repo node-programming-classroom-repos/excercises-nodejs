@@ -1,5 +1,18 @@
-# variables-datatypes-excercises
 ## Introduktion till Variabler och Datatyper i Node.js
+
+
+i filen "vars.js" finns några exempel.
+Ladda ner filen och öppna i Visual Studio Code.
+Kör filen och försök förstå vad som händer.
+
+Du kör filen genom att välja Run/Run without debugging och sedan välja node. Eller kör via terminalen
+
+    $ node vars.js
+
+
+du behöver ha node installerat.
+
+
 
 ### En variabel 
 är som en namngiven behållare för att lagra data i ett program/en app. 
