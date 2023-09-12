@@ -20,8 +20,14 @@ Node.js är särskilt bra på att hantera asynkron I/O-operationer. Detta inneb�
 
 Här är några övningar som hjälper dig att träna på I/O i Node.js:
 
-### Övning 1: Läs från Konsolen
+### Övning 1.1: Läs från Konsolen
 Skriv ett program som frågar användaren efter deras namn och sedan skriver ut en hälsningsfras som "Hej, [Namn]!".
+
+### Övning 1.2 Enkel Inmatning och Utmatning
+Skriv ett program som frågar användaren efter sitt födelsedatum och räknar sedan ut och skriver ut deras ålder.
+
+### Övning 1.3: Enkel Kalkylator
+Skriv ett program som frågar användaren efter två tal och en operator (+, -, *, /) och utför sedan beräkningen och skriver ut resultatet.
 
 ### Övning 2: Skriv till en Fil
 Skriv ett program som tar emot en text från användaren och sparar den i en textfil med ett specifikt namn.

@@ -1,5 +1,5 @@
 
-//Övning 1: Läs från Konsolen
+//Övning 1.1: Läs från Konsolen
 
 const readline = require('readline');
 
@@ -11,6 +11,56 @@ const rl = readline.createInterface({
 rl.question('Vad är ditt namn? ', function (name) {
     console.log('Hej, ' + name + '!');
     rl.close();
+});
+
+//Övning 1.2
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('Ange ditt födelsedatum (ÅÅÅÅ-MM-DD): ', function (birthdate) {
+    const today = new Date();
+    const birthDate = new Date(birthdate);
+    const age = today.getFullYear() - birthDate.getFullYear();
+    console.log('Du är ' + age + ' år gammal.');
+    rl.close();
+});
+
+//Övning 1.3
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('Ange det första talet: ', function (num1) {
+    rl.question('Ange en operator (+, -, *, /): ', function (operator) {
+        rl.question('Ange det andra talet: ', function (num2) {
+            let result;
+            switch (operator) {
+                case '+':
+                    result = parseFloat(num1) + parseFloat(num2);
+                    break;
+                case '-':
+                    result = parseFloat(num1) - parseFloat(num2);
+                    break;
+                case '*':
+                    result = parseFloat(num1) * parseFloat(num2);
+                    break;
+                case '/':
+                    result = parseFloat(num1) / parseFloat(num2);
+                    break;
+                default:
+                    result = 'Ogiltig operator';
+            }
+            console.log('Resultat: ' + result);
+            rl.close();
+        });
+    });
 });
 
 //Övning 2: Skriv till en Fil
