@@ -22,7 +22,11 @@ Rekeommderat är att använda "let".
 
 Exempel: 
 
-    let age = 25; eller let name = 'Alice';
+    let age = 25; 
+
+eller t ex
+    
+    let name = 'Alice';
 
 
 ### Datatyper 
@@ -53,7 +57,8 @@ Exempel:
         Strängkonkatinering: let greeting = 'Hej ' + 'världen';
         Jämförelse: let isGreater = 10 > 5;
 
-Variabler och datatyper är grundläggande byggstenar i programmering. Genom att förstå hur man deklarerar variabler och arbetar med olika datatyper kan du skapa kraftfulla och dynamiska program. 
+Variabler och datatyper är grundläggande byggstenar i programmering. 
+
 
 
 # Övningar
