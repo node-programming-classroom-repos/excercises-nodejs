@@ -12,8 +12,8 @@ Exempel:
     const fruits = ['äpple', 'banan', 'apelsin'];
     console.log(fruits[0]); // Output: äpple
 
-### Objekt (Objects):
-Ett objekt är en samling av nyckel-värde-par, där varje nyckel är unik. Det används för att lagra data i strukturerad form.
+### Objekt (object literal):
+Ett objekt, eller object literal som är det korrekta namnet i det här sammanhanget, är en samling av nyckel-värde-par, där varje nyckel är unik. Det används för att lagra data i strukturerad form.
 
 Exempel:
 
