@@ -4,20 +4,20 @@
 Kortfattat så kan OOP summeras;
 Objektorienterad programmering (OOP) är en programmeringsparadigm som bygger på att allt i programmet är objekt som interagerar med varandra. Ett objekt är en instans av en klass, som är en mall för hur objektet ska se ut och fungera. Här är några av de grundläggande koncepten inom OOP:
 
-    ### Klasser och objekt: 
-    En klass är en mall för hur ett objekt ska se ut och fungera. Ett objekt är en instans av en klass.
+### Klasser och objekt: 
+En klass är en mall för hur ett objekt ska se ut och fungera. Ett objekt är en instans av en klass.
 
-    ### Arv: 
-    En klass kan ärva egenskaper och metoder från en annan klass.
-    
-    ### Abstraktion: 
-    Att separera en del av ett system från resten av systemet för att göra det enklare att förstå och hantera.
-    
-    ### Inkapsling: 
-    Att "gömma" implementationen av en del av ett system bakom ett gränssnitt, så att användaren bara behöver interagera med gränssnittet och inte behöver veta hur det fungerar under ytan.
+### Arv: 
+En klass kan ärva egenskaper och metoder från en annan klass.
 
-    ### Polymorfism: 
-    Att använda samma metod på olika objekt och få olika resultat beroende på objektens egenskaper och metoder.
+### Abstraktion: 
+Att separera en del av ett system från resten av systemet för att göra det enklare att förstå och hantera.
+
+### Inkapsling: 
+Att "gömma" implementationen av en del av ett system bakom ett gränssnitt, så att användaren bara behöver interagera med gränssnittet och inte behöver veta hur det fungerar under ytan.
+
+### Polymorfism: 
+Att använda samma metod på olika objekt och få olika resultat beroende på objektens egenskaper och metoder.
 
 OOP används i många programmeringsspråk, inklusive C++, Java, Python och JavaScript. Det är ett kraftfullt verktyg för att skapa välstrukturerade och lättförståeliga program.
 
