@@ -29,6 +29,68 @@ eller t ex
     let name = 'Alice';
 
 
+### const (Konstanta variabler):
+
+const används för att deklarera variabler vars värde inte kommer att ändras efter tilldelningen. En konstant variabel måste tilldelas ett värde vid deklarationen, och försök att ändra värdet senare kommer att resultera i ett fel.
+
+Exempel:
+
+    const pi = 3.14159;
+    console.log(pi); // Output: 3.14159
+
+    // Försök att ändra värdet av en konstant variabel kommer att generera ett fel:
+    // pi = 3; // Detta ger TypeError: Assignment to constant variable.
+
+I detta exempel skapar vi en konstant variabel pi och tilldelar den värdet av pi (π). Eftersom det är en konstant kan vi inte ändra värdet på pi efter att det har tilldelats.
+
+### let (Variabler med blockomfång):
+
+let används för att deklarera variabler som är begränsade till den aktuella kodblockets omfång (block scope). Det innebär att variabeln bara är tillgänglig inom det kodblock där den deklareras.
+
+Exempel:
+
+    if (true) {
+        let x = 10; // Variabeln x är bara tillgänglig inom detta if-block
+        console.log(x); // Output: 10
+    }
+
+    // Försök att komma åt x utanför if-blocket kommer att resultera i en ReferenceError:
+    // console.log(x); // Detta ger ReferenceError: x is not defined
+
+I detta exempel skapar vi en variabel x med let inom ett if-block. Variabeln x är endast tillgänglig inom detta block, och försök att komma åt den utanför blocket genererar ett fel.
+
+
+### let eller var???
+let och var är två sätt att deklarera variabler (i javascript), men de har olika omfång och beteenden. Skillnaden mellan dem ligger i hur de hanterar variabler med avseende på omfång (scope).
+
+1. let:
+
+        let har s.k block scope i JavaScript. Det innebär att variabler deklarerade med let är begränsade till det block där de är deklarerade, inklusive inre block.
+        Variabler deklarerade med let kan inte deklareras igen inom samma omfång (block).
+        Variabler deklarerade med let är inte tillgängliga före deklarationen (hoisting gäller, men variabeln är inte initialiserad före deklarationen).
+
+
+2. var:
+
+        var har funktionsscope eller globalt scope (beroende på var variabeln deklareras).
+        Variabler deklarerade med var kan deklareras igen inom samma funktion eller i globalt scope.
+        Variabler deklarerade med var är hoisted, vilket innebär att de är tillgängliga över hela funktionen, även före deklarationen.
+
+Exempel med var:
+
+    if (true) {
+        var y = 20; // y är tillgänglig i hela funktionen
+        console.log(y); // 20
+    }
+    console.log(y); // 20
+
+Vilken ska du använda?
+
+Generellt sett bör du föredra att använda let istället för var i modern JavaScript och Node.js. Anledningen är att let ger bättre kontroll över omfånget av variabler och minimerar riskerna med oavsiktliga variabelöverskuggningar eller globala variabler.
+
+Du bör använda let när du vill begränsa variabeln till ett specifikt blockomfång. Om du arbetar med äldre kod som använder var, kan det vara lämpligt att fortsätta använda var, men för nya projekt är det en bra praxis att använda let och const för att ha tydligare och mer förutsägbara omfång för variabler.
+
+
 ### Datatyper 
 definierar vilken typ av data en variabel kan innehålla.
 
