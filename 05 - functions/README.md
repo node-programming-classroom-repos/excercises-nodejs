@@ -60,7 +60,7 @@ Exempel:
 
     const circleArea = calculateArea(5);
     console.log("Cirkelns area är: " + circleArea); // Output: Cirkelns area är: 78.53975
-    // pi är inte tillgänglig här
+    // area (och pi) är inte tillgänglig här
 
 ### Anonyma funktioner:
 
