@@ -79,10 +79,10 @@ let och var är två sätt att deklarera variabler (i javascript), men de har ol
 Exempel med var:
 
     if (true) {
-        var y = 20; // y är tillgänglig i hela funktionen
+        var y = 20; // y är tillgänglig i hela if-satsen
         console.log(y); // 20
     }
-    console.log(y); // 20
+    console.log(y); // 20  y är även tillgänglig/åtkomlig här.... kan vara dåligt...
 
 Vilken ska du använda?
 
