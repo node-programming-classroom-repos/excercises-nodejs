@@ -1,3 +1,5 @@
+# Kom igång med nodejs
+
 ### Node.js 
 (eller bara node) är en open source-plattform för att köra JavaScript utanför webbläsaren. Det är en populär plattform för att utveckla webbapplikationer, men kan också användas för att utveckla andra typer av applikationer, till exempel webbservrar, realtidschattprogram och spel.
 
@@ -18,7 +20,7 @@ Spel: Node.js kan användas för att utveckla spel, eftersom det är snabbt och 
 
 Node.js är ett kraftfullt verktyg som kan användas för att utveckla en mängd olika applikationer. Det är ett bra val för utvecklare som letar efter en skalbar och effektiv plattform för att utveckla sina applikationer.
 
-# Bra att veta
+### Bra att veta
 När man startar ett node-projekt så skapas en s.k "package.json"-fil. Det är en fil som används för att beskriva ett Node.js-paket. Den innehåller information om paketets namn, version, beroenden och andra metadata.
 
 Package.json-filen finns i varje Node.js-projekt. Den används för att installera och hantera paket, till exempel Node.js-moduler och andra paket som finns i npm-registret.
