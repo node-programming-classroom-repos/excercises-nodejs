@@ -2,6 +2,7 @@
 inom programmering är detta ett kraftfullt sätt att skapa objektbaserad kod. De används för att definiera blueprints (mallar) för objekt med liknande egenskaper och metoder. 
 De mest grundläggande begreppen och koncepten är objekt, konstruktor och metoder.
 
+I filen [oop.md](https://github.com/node-programming-classroom-repos/excercises-nodejs/blob/main/08%20-%20classes/oop.md), i det här repot, finns en mer genomgående beskrivning av konceptet. Läs gärna om du är nybörjare. *
 ### Exempel: Skapa en Klass för Bilar
 
 Vi kommer att skapa en klass som representerar bilar. En bil har egenskaper som "märke" och "modell" samt metoder som "starta" och "stoppa".
