@@ -142,7 +142,7 @@ Antag att vi har en superklass Vehicle som beskriver grundläggande egenskaper o
         }
     }
 
-(i en annan fil) vi ärva från Vehicle:
+(gärna i en annan fil) ärva från Vehicle:
 
     // Subklass (underklass) som ärver från Vehicle
     class Car extends Vehicle {
