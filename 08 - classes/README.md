@@ -38,21 +38,22 @@ Vi kommer att skapa en klass som representerar bilar. En bil har egenskaper som 
     myCar.stop();  // Stäng av bilen: Toyota Camry har stängts av.
 
 
-### class: 
+#### class: 
 En klass är en mall som definierar egenskaper och metoder som objekt baseras på. I vårt exempel är Car en klass.
 
-### object: 
+#### object: 
 Ett objekt är en instans av en klass. myCar är ett objekt baserat på Car-klassen.
 
-### constructor: 
+#### constructor: 
 En speciell metod som körs när ett nytt objekt skapas från en klass. Den används för att initialisera objektets egenskaper. I exemplet initierar konstruktorn brand och model.
 
-### properties: 
+#### properties: 
 Variabler som lagrar data om objektet. I exemplet är brand, model och isRunning properties/egenskaper.
 
-### methods: Funktioner som är knutna till objektet och kan utföra åtgärder. I exemplet är start och stop metoder.
+#### methods: 
+Funktioner som är knutna till objektet och kan utföra åtgärder. I exemplet är start och stop metoder.
 
-### this: 
+#### this: 
 this hänvisar till det aktuella objektet. I metoderna start och stop används this för att komma åt och ändra objektets egenskap isRunning.
 
 Klasser är användbara för att organisera och strukturera din kod och gör det möjligt att skapa flera objekt med liknande egenskaper och beteenden.
