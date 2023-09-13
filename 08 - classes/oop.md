@@ -130,17 +130,17 @@ I detta exempel definierar vi en Shape-klass som är abstrakt, vilket betyder at
 I detta exempel definierar vi en BankAccount-klass med en konstruktor som tar ett saldo som argument. Vi definierar också en balance-getter som returnerar saldot, och deposit- och withdraw-metoder för att sätta in och ta ut pengar från kontot. Vi använder en _balance-variabel med ett understreck för att indikera att den är privat och inte ska ändras direkt från utsidan av klassen. Vi skapar sedan ett nytt BankAccount-objekt med ett saldo på 1000, sätter in 500 och tar ut 200, och skriver ut saldot efter varje transaktion. Dessa exempel visar några av de grundläggande OOP-koncepten och hur de kan implementeras med Node.js. Det finns många fler koncept och tekniker inom OOP som kan användas för att skapa robusta och skalbara program.
 
 ### Ytterligare resurser
-    [MDN Web Docs - JavaScript Object-Oriented Programming Concepts](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
-    MDN Web Docs är en pålitlig källa för allt som rör webbutveckling, inklusive JavaScript och objektorienterad programmering.
+[MDN Web Docs - JavaScript Object-Oriented Programming Concepts](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
+MDN Web Docs är en pålitlig källa för allt som rör webbutveckling, inklusive JavaScript och objektorienterad programmering.
 
-    [Node.js Official Documentation - Object-Oriented Programming](https://nodejs.org/api/all.html#all_object_oriented_programming)
-    Node.js officiella dokumentation innehåller information om hur OOP-koncept tillämpas i Node.js-miljön.
+[Node.js Official Documentation - Object-Oriented Programming](https://nodejs.org/api/all.html#all_object_oriented_programming)
+Node.js officiella dokumentation innehåller information om hur OOP-koncept tillämpas i Node.js-miljön.
 
-    [TutorialsPoint - Node.js Object-Oriented Programming](https://www.tutorialspoint.com/nodejs/nodejs_object_oriented_programming.htm)
-    TutorialsPoint erbjuder omfattande handledning om objektorienterad programmering med Node.js, inklusive exempel och kodsnuttar.
+[TutorialsPoint - Node.js Object-Oriented Programming](https://www.tutorialspoint.com/nodejs/nodejs_object_oriented_programming.htm)
+TutorialsPoint erbjuder omfattande handledning om objektorienterad programmering med Node.js, inklusive exempel och kodsnuttar.
 
-    [Node.js Design Patterns](https://nodejsdesignpatterns.com/)
-    Denna webbplats fokuserar på designmönster i Node.js, vilket är en viktig del av OOP. Den ger dig insikt i hur man bygger skalbara och underhållbara Node.js-applikationer med OOP-principer.
+[Node.js Design Patterns](https://nodejsdesignpatterns.com/)
+Denna webbplats fokuserar på designmönster i Node.js, vilket är en viktig del av OOP. Den ger dig insikt i hur man bygger skalbara och underhållbara Node.js-applikationer med OOP-principer.
 
-    [JavaScript.info - Object-Oriented Programming](https://javascript.info/class)
-    JavaScript.info är en resurs med mycket information om JavaScript, inklusive OOP-koncept och hur de används med moderna JavaScript-funktioner som klasser.
+[JavaScript.info - Object-Oriented Programming](https://javascript.info/class)
+JavaScript.info är en resurs med mycket information om JavaScript, inklusive OOP-koncept och hur de används med moderna JavaScript-funktioner som klasser.
