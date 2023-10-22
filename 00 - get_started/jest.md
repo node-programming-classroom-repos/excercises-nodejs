@@ -1,4 +1,4 @@
-Om Testning - vad är testning?
+## Om Testning - vad är testning?
 
 Först och främst - i kursens uppgifter behöver du ha kännedom om testraamverket "Jest".
 Om din uppgift klarar testet så uppfyller den alla krav och du kan få bedömningen godkänt.
@@ -37,11 +37,11 @@ Testning är alltså en process där du systematiskt utvärderar och verifierar 
     Acceptance tester: Acceptanstester testar din programvara ur användarens perspektiv och verifierar att den uppfyller de specifikationer och krav som ställs på den.
 
  
-Använda och komma igång med Jest
+## Använda och komma igång med Jest
 
 Det finns flera sätt att komma igång med Jest. Nedan beskriver jag två sätt att konfigurera och använda Jest i ditt projekt.
 
-Ett exempel med package.json:
+### Ett exempel med package.json:
 
 1. Skapa en mapp för ditt projekt och navigera till den i terminalen eller öppna en terminal med VSC.
 Notera att om du redan gjort ett node-projekt med "npm init", så har du redan en package.json.
@@ -117,7 +117,9 @@ skapa en fil som heter mathFunctions.js:
 
 
 Detta kommer att köra ditt tester med Jest. Du borde se att ditt test passerar och att resultatet är något i stil med "Test Suites: 1 passed".
-Ett exempel med en jest.config.js
+
+
+### Ett exempel med en jest.config.js
 
 Skapa en mapp för ditt projekt och navigera till den i terminalen eller öppna en terminal i mappen med VSC.
 Kör följande kommando för att skapa ett projekt med en package.json-fil
