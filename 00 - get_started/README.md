@@ -156,3 +156,6 @@ I konsollen ska du se följande utskrift:
     Hello World
 
 Du kan ändra koden för att skriva ut andra texter till konsollen.
+
+Gå vidare nu med att läsa om hur du kommer igång med Jest.
+Se i filen jest.md i denna mappen.
