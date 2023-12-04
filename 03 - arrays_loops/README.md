@@ -14,6 +14,10 @@ javascript
     let numbers = [1, 2, 3, 4, 5];
     let fruits = ['äpple', 'banan', 'apelsin'];
 
+fruits är en array. Se denna som en varaibel vars datatyp tillåter flera värden att lagras.
+Notera hakparenteserna som innesluter värdena, separerade med ,
+
+
 Loopar i Node.js:
 
     En loop är en struktur som låter dig utföra samma kodblock upprepade gånger baserat på ett villkor eller en samling av värden (som en array).
