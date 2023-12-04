@@ -208,6 +208,7 @@ Skriv en funktion greet som tar ett språk som argument och returnerar en funkti
 
 ### Övning 8: Rekursion
 Skriv en rekursiv funktion som beräknar det n:te Fibonacci-talet.
+Se t ex här för mer information om Fibonacci: https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
 
 ### Övning 9: Closures
 Skriv en funktion counter som returnerar en funktion. Den returnerade funktionen ska räkna upp varje gång den anropas och returnera det aktuella räknevärde.
