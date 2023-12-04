@@ -69,9 +69,13 @@ Detta kommer att ge dig en lista över alla NPM-kommandon och deras användning.
 
 För att installera ett paket från npm-registret kan du köra följande kommando:
 
+    $npm install paketetsNamn
+    
+Till exempel för att installera paketet/modulen express:
+
     $npm install express
 
-Detta kommer att installera Node.js-modulen "express" i ditt projekt.
+Detta kommer att installera modulen "express" i ditt projekt.
 
 För att hantera beroenden mellan paket kan du använda NPM:s "dependencies"-attribut i din package.json-fil. Till exempel, om ditt projekt är beroende av Node.js-modulen "express" kan du lägga till följande till din package.json-fil:
 
@@ -83,17 +87,19 @@ För att hantera beroenden mellan paket kan du använda NPM:s "dependencies"-att
     }
     }
 
-Use code with caution. Learn more
 
 Detta kommer att berätta för NPM att ditt projekt är beroende av Node.js-modulen "express" i version "4.17.1" eller senare.
+Tecknet "^" betyder "eller senare" än version 4.17.1 i det här fallet.
+Om man istället använder "*" så betyder det att vilken version som helst gäller.
 
 För att distribuera ditt eget paket till npm-registret kan du använda NPM:s "publish"-kommando. Till exempel, om du har ett paket med namnet "my-package" kan du distribuera det genom att köra följande kommando:
 
     $npm publish my-package
 
 Detta kommer att publicera ditt paket i npm-registret så att andra utvecklare kan installera det.
+Innan du publicerar ditt paket bör du se till att det fungerar korrekt och att du har en bra dokumentation.
 
-NPM är ett kraftfullt verktyg som kan användas för att hantera JavaScript-paket. Det är ett viktigt verktyg för alla utvecklare som arbetar med Node.js.
+NPM är alltså ett verktyg som kan användas för att hantera JavaScript-paket. npm är ett viktigt verktyg för alla som arbetar med node.
 
 
 # Kom igång med node och VSC
@@ -101,17 +107,21 @@ För att komma igång med Node.js i Visual Studio Code (VSC) kan du följa dessa
 
 ### Installera Node.js
 
-Först måste du installera Node.js, som är den runtime som kör Node.js-applikationer. Du kan ladda ner Node.js från Node.js-webbplatsen.
+Först måste du installera Node.js, som är den runtime som kör Node.js-applikationer. Du kan ladda ner Node.js från Node.js-webbplatsen; https://nodejs.org/.
+På webbplatsen listas oftast en s.k LTS-version och en version som är current.
+Skillnaden är att LTS-versionen underhålls längre och att current vidareutvecklas i snabbare takt. Med andra ord är LTS stabilare.
 
 ### Installera VSC
 
-Visual Studio Code är en populär kodredigerare som är utformad för att vara lätt att använda och anpassningsbar. Du kan ladda ner Visual Studio Code från Visual Studio Code-webbplatsen.
+VSC är en populär editor som är utformad för att vara lätt att använda med stöd för extensions (tillägg) beroende på vad du vill göra. 
+Du kan ladda ner VSC från https://code.visualstudio.com/
 
 ### Skapa ett nytt Node.js-projekt
 
-När du har installerat Node.js och Visual Studio Code kan du skapa ett nytt Node.js-projekt. I Visual Studio Code kan du göra detta genom att gå till File > New File och välja Node.js File.
+När du har installerat Node.js och VSC kan du skapa ett nytt Node.js-projekt. I VSC gör du det genom att gå till File > New File och välja Node.js File.
 
 Detta kommer att skapa en ny fil med namnet app.js. Du kan börja skriva din Node.js-kod i den här filen.
+Du kan också t ex välja att öppna en mapp och skapa en ny fil i VSC - skapa då en fil med extensionen .js (javasscript).
 
 ### Skriv ut text till konsollen
 
@@ -124,9 +134,12 @@ Till exempel, för att skriva ut texten "Hello World" till konsollen kan du anv�
 
 ### Exekvera din kod
 
-När du har skrivit din kod kan du köra den genom att trycka på F5 i Visual Studio Code. Detta kommer att starta en Node.js-terminal och köra din kod.
+När du har skrivit din kod kan du köra den genom att trycka på F5 i VSC. Detta kommer att starta en Node.js-terminal och köra din kod.
+Du kan också starta en ny terminal i VSC och i den skriva kommandot för att köra ditt script;
 
-I konsollen ska du se utskriften av din kod.
+    $ node namnetPåDittScript.js
+
+I konsollen ska du då då se utskriften av din kod.
 
 Här är några ytterligare exempel på hur du kan använda console.log() för att skriva ut text till konsollen:
 
@@ -137,11 +150,11 @@ Här är några ytterligare exempel på hur du kan använda console.log() för a
 
 Du kan också använda console.log() för att skriva ut mer komplexa datastrukturer, till exempel JSON-objekt.
 
-Testa nu själv för att se att du är redo;
+Testa nu själv;
 
 skapa en enkel Node.js-applikation som skriver ut texten "Hello World" till konsollen.
 
-Öppna Visual Studio Code.
+Öppna VSC.
 Skapa ett nytt Node.js-projekt.
 Lägg till följande kod till filen app.js:
 
