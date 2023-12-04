@@ -57,7 +57,7 @@ Exempel:
     uniqueNumbers.add(1); // Ignoreras eftersom 1 redan finns
     console.log(uniqueNumbers); // Output: Set { 1, 2 }
 
-### Map (Kartor):
+### Map:
 En map är en samling av nyckel-värde-par där nycklarna kan vara av olika datatyper. Den används för att koppla värden till nycklar och möjliggör effektiv sökning.
 
 Exempel:
