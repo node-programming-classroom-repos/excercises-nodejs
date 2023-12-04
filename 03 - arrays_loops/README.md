@@ -14,8 +14,9 @@ javascript
     let numbers = [1, 2, 3, 4, 5];
     let fruits = ['äpple', 'banan', 'apelsin'];
 
-fruits är en array. Se denna som en varaibel vars datatyp tillåter flera värden att lagras.
-Notera hakparenteserna som innesluter värdena, separerade med ,
+numbers och fruits är arrayer. Se dessa som varaibler som tillåter flera värden att lagras.
+Notera hakparenteserna som innesluter värdena, separerade med , (kommatecken).
+Det är också tillåtet att blanda värden av olika datatyper.
 
 
 Loopar i Node.js:
