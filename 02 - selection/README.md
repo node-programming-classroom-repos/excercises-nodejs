@@ -61,8 +61,8 @@ Skriv en if-sats som kontrollerar om två booleska variabler, isSunny och isWarm
 ### Övning 6: Switch-sats
 Använd en switch-sats för att kontrollera värdet på en variabel dayOfWeek och skriv ut motsvarande meddelande baserat på dagen (t.ex. "Måndag", "Tisdag", etc.).
 
-### Övning 7: Använd Fallgenomgång (Switch)
-Använd en switch-sats med fallgenomgång för att kontrollera värdet på en variabel score och skriv ut betyget (A, B, C, etc.) baserat på poängen.
+### Övning 7: Använd break (Switch)
+Använd en switch-sats med break för att kontrollera värdet på en variabel score och skriv ut betyget (A, B, C, etc.) baserat på poängen.
 
 ### Övning 8: Nestlade Villkor
 Använd nestlade if-satser för att kontrollera om ett heltal age är under 18 år, mellan 18 och 65 år eller över 65 år. Skriv ut motsvarande meddelande.
