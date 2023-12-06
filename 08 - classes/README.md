@@ -116,6 +116,99 @@ I detta exempel har vi ändrat klassen till Planet, som representerar planeter. 
 Vi skapar två instanser av Planet-klassen, earth och mars, och använder sedan deras metoder för att visa information om planeterna. Detta visar på hur du kan använda klasser för att skapa flera objekt med samma struktur och funktionalitet.
 
 
+# Relationer mellan klasser och objekt
+Relationer mellan klasser i objektorienterad programmering är grundläggande för att modellera interaktioner och hierarkier mellan olika komponenter i ett system. Här är några viktiga begrepp och koncept:
+
+Arv (Inheritance):
+    Med arv kan man skapa en annan klass baserad på en befintlig klass. Den nya klassen, kallas då subklass, kommer att ärva egenskaper och metoder från den befintliga (superklassen) klassen.
+
+Komposition (Composition):
+    Innebär att en klass innehåller en eller flera instanser av en annan klass som en del av sina medlemmar. Gör det möhligt för komplexa objekt.
+
+Aggregation:
+    Aggregation är där en klass har en relation med en annan klass genom att referera till dess instanser. Skillnaden är att de kan existera oberoende av varandra. Det skapar en "har-en" relation.
+
+Association:
+    Association representerar en allmän relation mellan två klasser där de kan interagera eller vara beroende av varandra. Det kan vara enkelsidig eller dubbelsidig och kan uttrycka olika nivåer av beroende.
+
+Implementering (Realization):
+    Beskriver hur en klass använder ett Interface (gränssnitt). Det används ofta i samband med jist interface och abstrakta klasser för att specificera (måste implementeras) hur en klass ska genomföra vissa metoder.
+
+Dependency:
+    Dependency indikerar att en klass använder eller är beroende av en annan klass. Det kan vara tillfälligt och är ofta resultatet av att en klass använder en annan klass som en parameter i en metod eller som en del av dess interna logik.
+
+Multipel arv (Multiple Inheritance):
+    Multipel arv uppstår när en klass ärver egenskaper och metoder från mer än en superklass. Detta kan leda till komplexa hierarkier och ibland problem pga av ökad komplexitet. Vissa programmeringsspråk stöder inte detta.
+
+
+
+Det är bra om man förstår och kan implementera dessa relationer - detta ger mer flexibla och robusta system som kan underhållas och byggas ut mer enkelt. 
+Här nedan tas några av dessa typer upp i form av exempel.
+
+Här är ett exempel på några av typerna ovan:
+I det här exemplet representerar tre olika klasser olika komponenter i en dator: Computer, CPU och Memory. Låt oss beskriva relationerna mellan dessa klasser:
+
+    Computer har en CPU och Memory:
+        I objektorienterad programmering representerar detta en "has-a" relation. En dator "har en" CPU och Memory, vilket innebär att dessa är en del av datorn.
+
+    CPU tillhör Computer:
+        CPU-klassen är en del av Computer-klassen. Detta illustrerar att det finns en relation där en CPU tillhör en specifik dator. I detta fall är det genom att Computer-klassen har en egenskap som refererar till en instans av CPU-klassen.
+
+    Memory tillhör Computer:
+        På samma sätt tillhör Memory-klassen också Computer-klassen. Detta indikerar att minnet är en del av datorn och återspeglas genom att Computer-klassen har en egenskap som refererar till en instans av Memory-klassen.
+
+    Computer använder CPU och Memory:
+        I funktionen start() inom Computer-klassen används CPU och Memory för att utföra operationer. Detta representerar en användningsrelation där Computer använder CPU och Memory för att utföra sina uppgifter.
+
+
+    
+    class CPU {
+    constructor(model) {
+        this.model = model;
+    }
+
+    executeInstruction() {
+        console.log(`${this.model} is executing an instruction.`);
+    }
+    }
+
+    
+    class Memory {
+    constructor(sizeGB) {
+        this.sizeGB = sizeGB;
+    }
+
+    readData() {
+        console.log(`Reading data from ${this.sizeGB}GB memory.`);
+    }
+    }
+
+    // Computer-klassen representerar hela datorsystemet och har en relation med CPU och Memory
+    class Computer {
+    constructor(cpu, memory) {
+        this.cpu = cpu;
+        this.memory = memory;
+    }
+
+    start() {
+        console.log(`Computer starting...`);
+        this.cpu.executeInstruction();
+        this.memory.readData();
+        console.log(`Computer started.`);
+    }
+    }
+
+    // skapa instanser av CPU och Memory
+    const myCPU = new CPU('Intel Core i7');
+    const myMemory = new Memory(16);
+
+    // Skapa en instans av Computer och tilldela CPU och Memory
+    const myComputer = new Computer(myCPU, myMemory);
+
+    // "Starta datorn"
+    myComputer.start();
+
+
 # Arv / Inheritance
 Arv är en viktig byggsten i objektorienterad programmering (OOP) och finns även i Node.js. Arv tillåter en klass (kallad "subklass" eller "underklass") att ärva egenskaper och metoder från en annan klass (kallad "superklass" eller "överklass"). Detta gör det möjligt att återanvända kod och skapa hierarkier av klasser med olika nivåer av specialisering. Låt oss förklara arv i Node.js med ett exempel:
 
