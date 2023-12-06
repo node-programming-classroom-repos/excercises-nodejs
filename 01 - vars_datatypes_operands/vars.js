@@ -7,10 +7,18 @@ let name = "Alice";
 console.log("Namn:", name);
 
 //Deklarera två variabler, num1 och num2, och tilldela dem två heltal. Använd sedan en operator för att beräkna deras summa och skriv ut resultatet.
-// Deklarera två variabler och tilldela dem heltal
 let num1 = 5;
 let num2 = 10;
 console.log("Summan av", num1, "och", num2, "är:", summa);
+
+//Deklarera två variabler, firstName och lastName, och tilldela dem ditt förnamn och efternamn. Använd sedan operatorn + för att sätta samman dem och skriv ut hela ditt namn.
+// Deklarera två variabler och tilldela dem förnamn och efternamn
+let firstName = "Stig";
+let lastName = "Pålsson";
+let fullName = firstName + " " + lastName;
+console.log("Hela namnet är:", fullName);
+//eller:
+console.log("Hela namnet är: " + fullName);
 
 
 // Deklarera en variabel och tilldela ett flyttal
