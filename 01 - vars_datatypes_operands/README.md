@@ -125,6 +125,8 @@ Variabler och datatyper är grundläggande byggstenar i programmering.
 
 # Övningar
 
+**Det finns fler övningar i filen [more.js](more.js)**
+
 ### Övning 1: Variabeldeklaration
 Skapa en variabel med namnet name och tilldela den ditt eget namn. Skriv ut värdet på variabeln i terminalen.
 
