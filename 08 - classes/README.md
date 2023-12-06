@@ -145,8 +145,7 @@ Relationer mellan klasser i objektorienterad programmering är grundläggande f�
 Det är bra om man förstår och kan implementera dessa relationer - detta ger mer flexibla och robusta system som kan underhållas och byggas ut mer enkelt. 
 Här nedan tas några av dessa typer upp i form av exempel.
 
-Här är ett exempel på några av typerna ovan:
-I det här exemplet representerar tre olika klasser olika komponenter i en dator: Computer, CPU och Memory. Låt oss beskriva relationerna mellan dessa klasser:
+Det här exemplet representerar komponenter i en dator: Computer, CPU och Memory. 
 
     Computer har en CPU och Memory:
         I objektorienterad programmering representerar detta en "has-a" relation. En dator "har en" CPU och Memory, vilket innebär att dessa är en del av datorn.
@@ -155,10 +154,10 @@ I det här exemplet representerar tre olika klasser olika komponenter i en dator
         CPU-klassen är en del av Computer-klassen. Detta illustrerar att det finns en relation där en CPU tillhör en specifik dator. I detta fall är det genom att Computer-klassen har en egenskap som refererar till en instans av CPU-klassen.
 
     Memory tillhör Computer:
-        På samma sätt tillhör Memory-klassen också Computer-klassen. Detta indikerar att minnet är en del av datorn och återspeglas genom att Computer-klassen har en egenskap som refererar till en instans av Memory-klassen.
+        På samma sätt tillhör Memory också Computer. Detta betyder att minnet är en del av datorn genom att Computer-klassen har en egenskap som refererar till en instans av Memory-klassen.
 
     Computer använder CPU och Memory:
-        I funktionen start() inom Computer-klassen används CPU och Memory för att utföra operationer. Detta representerar en användningsrelation där Computer använder CPU och Memory för att utföra sina uppgifter.
+        I funktionen start() inom Computer-klassen används CPU och Memory för att utföra operationer. Computer använder CPU och Memory för att utföra sina uppgifter.
 
 
     
