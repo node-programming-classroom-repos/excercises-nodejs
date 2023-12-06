@@ -119,25 +119,25 @@ Vi skapar två instanser av Planet-klassen, earth och mars, och använder sedan 
 # Relationer mellan klasser och objekt
 Relationer mellan klasser i objektorienterad programmering är grundläggande för att modellera interaktioner och hierarkier mellan olika komponenter i ett system. Här är några viktiga begrepp och koncept:
 
-Arv (Inheritance):
+**Arv (Inheritance)**:
     Med arv kan man skapa en annan klass baserad på en befintlig klass. Den nya klassen, kallas då subklass, kommer att ärva egenskaper och metoder från den befintliga (superklassen) klassen.
 
-Komposition (Composition):
+**Komposition (Composition)**:
     Innebär att en klass innehåller en eller flera instanser av en annan klass som en del av sina medlemmar. Gör det möhligt för komplexa objekt.
 
-Aggregation:
+**Aggregation**:
     Aggregation är där en klass har en relation med en annan klass genom att referera till dess instanser. Skillnaden är att de kan existera oberoende av varandra. Det skapar en "har-en" relation.
 
-Association:
+**Association**:
     Association representerar en allmän relation mellan två klasser där de kan interagera eller vara beroende av varandra. Det kan vara enkelsidig eller dubbelsidig och kan uttrycka olika nivåer av beroende.
 
-Implementering (Realization):
+**Implementering (Realization)**:
     Beskriver hur en klass använder ett Interface (gränssnitt). Det används ofta i samband med jist interface och abstrakta klasser för att specificera (måste implementeras) hur en klass ska genomföra vissa metoder.
 
-Dependency:
+**Dependency**:
     Dependency indikerar att en klass använder eller är beroende av en annan klass. Det kan vara tillfälligt och är ofta resultatet av att en klass använder en annan klass som en parameter i en metod eller som en del av dess interna logik.
 
-Multipel arv (Multiple Inheritance):
+**Multipel arv (Multiple Inheritance)**:
     Multipel arv uppstår när en klass ärver egenskaper och metoder från mer än en superklass. Detta kan leda till komplexa hierarkier och ibland problem pga av ökad komplexitet. Vissa programmeringsspråk stöder inte detta.
 
 
