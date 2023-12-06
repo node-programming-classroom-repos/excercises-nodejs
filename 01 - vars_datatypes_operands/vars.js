@@ -1,10 +1,17 @@
 // Deklarera en variabel och tilldela ett heltal
-var age = 25;
+let age = 25;
 console.log("Ålder:", age);
 
 // Deklarera en variabel och tilldela en textsträng
-var name = "Alice";
+let name = "Alice";
 console.log("Namn:", name);
+
+//Deklarera två variabler, num1 och num2, och tilldela dem två heltal. Använd sedan en operator för att beräkna deras summa och skriv ut resultatet.
+// Deklarera två variabler och tilldela dem heltal
+let num1 = 5;
+let num2 = 10;
+console.log("Summan av", num1, "och", num2, "är:", summa);
+
 
 // Deklarera en variabel och tilldela ett flyttal
 var temperature = 28.5;
