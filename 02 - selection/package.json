@@ -1,0 +1,12 @@
+{
+  "name": "02---selection",
+  "version": "1.0.0",
+  "description": "i Node.js och andra programmeringsspråk, är ett fundamentalt programmeringskoncept som låter dig styra programflödet baserat på olika villkor. Det låter dig göra beslut i ditt program och utföra olika handlingar beroende på om ett villkor är sant eller falskt. Selektion är nödvändigt för att skapa dynamiska och responsiva program.",
+  "main": "facit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
