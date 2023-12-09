@@ -1,6 +1,7 @@
 ## Introduktion till Variabler och Datatyper i Node.js
 
 Längst ned i den här filen finns ett antal övningar.
+I filen [more.md](more.md) finns fler övningar (något enklare så starta där först).
 
 i filen "vars.js" finns några exempel.
 Ladda ner filen och öppna i Visual Studio Code.
@@ -125,7 +126,7 @@ Variabler och datatyper är grundläggande byggstenar i programmering.
 
 # Övningar
 
-**Det finns fler övningar i filen [more.js](more.js)**
+**DET FINNS FLER ÖVNINGAR I FILEN [more.md](more.md)**
 
 ### Övning 1: Variabeldeklaration
 Skapa en variabel med namnet name och tilldela den ditt eget namn. Skriv ut värdet på variabeln i terminalen.
