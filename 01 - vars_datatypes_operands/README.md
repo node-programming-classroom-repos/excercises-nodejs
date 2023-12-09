@@ -1,7 +1,7 @@
 ## Introduktion till Variabler och Datatyper i Node.js
 
-Längst ned i den här filen finns ett antal övningar.
-I filen [more.md](more.md) finns fler övningar (något enklare så starta där först).
+*Längst ned i den här filen finns ett antal övningar.
+I filen [more.md](more.md) finns fler övningar (något enklare så starta där först).*
 
 i filen "vars.js" finns några exempel.
 Ladda ner filen och öppna i Visual Studio Code.
