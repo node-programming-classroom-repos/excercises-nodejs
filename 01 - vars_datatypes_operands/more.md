@@ -3,7 +3,7 @@
 1. Skapa en variabel temperatureInCelsius och tilldela den dagens temperatur i Celsius.
    
 
-2. Skapa en variabel yearsOfExperience och tilldela den antalet år du har i erfarenhet.
+2. Skapa en variabel yearsOfExperience och tilldela den antalet år du har i erfarenhet i att programmera med node eller javascript.
 
 3. Skapa en variabel isWeekend och tilldela den true om det är helg, annars false.
 
