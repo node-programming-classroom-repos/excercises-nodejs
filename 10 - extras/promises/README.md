@@ -52,7 +52,7 @@ myPromise
 
 ## Ett första exempel
 
-Vi gör ett exempel; vi simulerar en asynkron operation med den inbyggda funktionen ``setTimeout``` som kan användas för att skapa en tidsmässig timeout.
+Vi gör ett exempel; vi simulerar en asynkron operation med den inbyggda funktionen ```setTimeout``` som kan användas för att skapa en tidsmässig timeout.
 
 Exemplet i sig kanske inte är så intressant, men det visar att när ```setTimeout```har exekverats efter 2 sekunder så kommer per automatik raden med ```.then((result)```att köras.
 ```result```, som är ett objekt, kommer att resultera i att det i konsollen skrivs ut "Klart efter 2 sekunder!".
