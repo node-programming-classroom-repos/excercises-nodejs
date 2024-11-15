@@ -83,7 +83,7 @@ delayedOperation()
 ## chaining - exempel
 
 Chaining är alltså ett koncept för att hantera och "kedja" flera operationer sekventiellt med promises.
-Praktiskt och konkret så gör vi detta med ```.then()``` i källkoden.
+Praktiskt och konkret så gör vi detta med fler s.k ```.then()```-anrop i källkoden (se inuti sista funktionen i exempelt nedan).
 Med chaining kommer vi alltså att kunna köra flera olika operationer i tur och ordning.
 
 Se nedan exempel, där vi har tre funktioner som är tänkta att simulera operationer som tar tid (vi använder ```setTimeout``` för att simulera tidsåtgång).
