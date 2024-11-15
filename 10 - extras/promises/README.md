@@ -208,8 +208,12 @@ Promise.race([promise1, promise2])
 ## async/await
 
 Med ```async``` och ```await``` kan vi göra koden mer "läsbar" (vilket kanske kan vara en smaksak).
+
 ```async``` läggs till som ett keyword i signaturen för funktionen och märker då ut denna som att den ska anropas i ett asynkront kontext.
-I exemplet nedan använder funktionen ```main``` ett anrop som är märkt med ```await```. Detta göra att vi måste ange funktionen med ```async``` i dess signatur.
+
+I exemplet nedan använder funktionen ```main``` ett anrop som är märkt med ```await```. 
+
+Detta göra att vi måste ange funktionen med ```async``` i dess signatur.
 
 
 ```javascript
@@ -234,7 +238,7 @@ main();
 
 ---
 
-## polling
+## polling - scenario
 Vi kan använda promises för att göra s.k **polling**-requests. 
 Se det som att vi försöker nå en resurs när denna blir "ledig" och vi frågar (pollar) resursen med ett, i det här fallet, specificerat antal försök försök (kan också göras i oändlgighet om resursen tillåter).
 Vi simulerar att vi ska "polla" ett API ett visst antal försök. För varje misslyckat försök (eller poll) så genereras ett s.k ```reject``` och vid lyckat försök ett ```resolve``` (då är vi alltså klara).
@@ -278,8 +282,10 @@ pollServer("https://jsonplaceholder.typicode.com/posts/1", 1000, 5)
 
 ---
 
-## progression
-Vi kan använda Promises för att när vi vill meddela eller utföra operationer under tiden som en operation håller på att utföras.
+## progression - scenario
+Vi skulle kunna använda Promises för att på något sätt hantera eller meddela om en progression för en operation.
+
+SSkulle kunna tänkas kunna användas i situationer när vi tex vill meddela eller utföra operationer under tiden som en operation håller på att utföras.
 
 Exempelvis om vi har en operation som *vi vet på förhand* tar lång tid, eller om operationen *skulle* ta lång tid.
 
@@ -327,7 +333,7 @@ fetchWithTimeout("https://jsonplaceholder.typicode.com/posts/1", 3000)
 
 ---
 
-## simulera cache
+## simulera cache - scenario
 
 Detta är inget som är inbyggt med promises men ibland är det meningsfullt att "simulera" en cache - t ex om vi har flera anrop till ett och samma API
 och vi vill undvika att göra samma anrop till samma endpoint (och sannolikt få tillbaka samma data i respons) så kan vi, som i exemplet nedan, simulera en cache.
