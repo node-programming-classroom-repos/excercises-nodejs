@@ -75,7 +75,7 @@ delayedOperation()
   .catch((error) => console.error(error));
 ```
 
-## 
+---
 
 
 ## chaining - exempel
@@ -120,6 +120,7 @@ fetchData()
   .catch((error) => console.error(error));
 ```
 
+---
 
 ## Promise.all - asynkrona operationer parallellt
 När du behöver köra flera asynkrona operationer parallellt och vänta tills alla är färdiga kan du använda ```Promise.all```.
@@ -136,6 +137,7 @@ Promise.all([promise1, promise2, promise3])
   .catch((error) => console.error(error));
 ```
 
+---
 
 ## Promise.race - snabbaste resultatet
 Med ```Promise.race``` får man resultatet av den operation som är snabbast/först blir färdig.
@@ -151,3 +153,33 @@ Promise.race([promise1, promise2])
   .catch((error) => console.error(error));
 
 ```
+
+---
+
+## async/await
+
+Med ```async``` och ```await``` kan vi göra koden mer "läsbar" (vilket kanske kan vara en smaksak).
+```async``` läggs till som ett keyword i signaturen för funktionen och märker då ut denna som att den ska anropas i ett asynkront kontext.
+I exemplet nedan använder funktionen ```main``` ett anrop som är märkt med ```await```. Detta göra att vi måste ange funktionen med ```async``` i dess signatur.
+
+
+```javascript
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Data hämtad"), 1000);
+  });
+}
+
+//måste ange async eftersom await används
+async function main() {
+  try {
+    const data = await fetchData(); //await, dvs en asynkron operation
+    console.log(data); // "Data hämtad"
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+main();
+```
+
