@@ -116,9 +116,9 @@ function displayData(data) {
 }
 
 fetchData()
-  .then((data) => processData(data))
-  .then((processedData) => displayData(processedData))
-  .then((finalOutput) => console.log(finalOutput)) // "Data hämtad bearbetad visas på skärmen"
+  .then((data) => processData(data))                    //chaining
+  .then((processedData) => displayData(processedData))  //chaining
+  .then((finalOutput) => console.log(finalOutput)) //chaining - skriver ut "Data hämtad bearbetad visas på skärmen"
   .catch((error) => console.error(error));
 ```
 
