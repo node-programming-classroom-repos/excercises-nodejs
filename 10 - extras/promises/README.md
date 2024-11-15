@@ -3,6 +3,8 @@
 Promises i JavaScript är ett kraftfullt sätt att hantera asynkron kod, dvs när kod (komponenter, anrop etc) behöver eller ska köras parallellt (eller sekventiellt).
 Promises används alltså för att hantera operationer som tar tid, som att läsa från ett externt API eller ladda in en stor fil. 
 
+Förhoppningsvis ger detta en bättre förståelse för promises och hur det kan användas i olika scenrier.
+
 Särskilt kraftfullt blir också promises eftersom det finns inbyggd funktionalitet för att hantera flera asynkrona operationer;
 
 - **felhantering** - med promises, och då asynkrona operationer, finns inbyggd funktionalitet för felhantering. Hantering av felen kan göras med ```.catch()``` eller om man använder ```async/await``` med ```try/catch```.
@@ -80,9 +82,9 @@ delayedOperation()
 ---
 
 
-## chaining - exempel
+## chaining och reduce - exempel
 
-Chaining är alltså ett koncept för att hantera och "kedja" flera operationer sekventiellt med promises.
+**Chaining** är alltså ett koncept för att hantera och "kedja" flera operationer sekventiellt med promises.
 Praktiskt och konkret så gör vi detta med fler s.k ```.then()```-anrop i källkoden (se sist i källkoden i exemplet och anropet till fetchData).
 Med chaining kommer vi alltså att kunna köra flera olika operationer i tur och ordning.
 
@@ -122,6 +124,29 @@ fetchData()
   .catch((error) => console.error(error));
 ```
 
+Likt chaining så finns **reduce** för att hantera ett sekventiellt förlopp med promises. Skillnaden mot chaining är att reduce är inbyggt i promises.
+I exemplet nedan använder vi reduce för att utföra uppgifterna (tasks) sekventiellt:
+
+```javascript
+
+//uppgifter
+const tasks = [
+  () => Promise.resolve("Uppgift 1 klar"),
+  () => Promise.resolve("Uppgift 2 klar"),
+  () => Promise.resolve("Uppgift 3 klar"),
+];
+
+tasks //vi gör ett radbryt för läsabarhetens skull
+  .reduce((chain, task) => {
+    return chain.then((result) => {
+      console.log(result);
+      return task();
+    });
+  }, Promise.resolve()) //när sista operationen i reduce körs -> finalResult
+  .then((finalResult) => console.log(finalResult)); // "Uppgift 3 klar"
+
+``
+
 ---
 
 ## Promise.all - asynkrona operationer parallellt
@@ -137,6 +162,28 @@ const promise3 = new Promise((resolve) => setTimeout(() => resolve("Tre"), 3000)
 Promise.all([promise1, promise2, promise3])
   .then((results) => console.log(results)) // ["Ett", "Två", "Tre"]
   .catch((error) => console.error(error));
+```
+
+
+För sakens skull så gör vi ett exempel till - vi vill och ska göra flera anrop till ett externt API parallellt.
+
+Vi använder ```Promise.all``` för att hantera detta:
+
+```javascript
+const fetchPost = fetch("https://jsonplaceholder.typicode.com/posts/1").then((res) =>
+  res.json()
+);
+const fetchUser = fetch("https://jsonplaceholder.typicode.com/users/1").then((res) =>
+  res.json()
+);
+
+Promise.all([fetchPost, fetchUser])
+  .then(([post, user]) => {
+    console.log("Post:", post);
+    console.log("User:", user);
+  })
+  .catch((error) => console.error("Ett fel uppstod:", error));
+
 ```
 
 ---
@@ -185,3 +232,125 @@ async function main() {
 main();
 ```
 
+---
+
+## polling
+Vi kan använda promises för att göra s.k **polling**-requests. 
+Se det som att vi försöker nå en resurs när denna blir "ledig" och vi frågar (pollar) resursen med ett, i det här fallet, specificerat antal försök försök (kan också göras i oändlgighet om resursen tillåter).
+Vi simulerar att vi ska "polla" ett API ett visst antal försök. För varje misslyckat försök (eller poll) så genereras ett s.k ```reject``` och vid lyckat försök ett ```resolve``` (då är vi alltså klara).
+
+```javascript
+
+//parametern interval används för hur länge väntetiden ska vara
+//maxAttemps med maxantal för antal försök
+function pollServer(url, interval, maxAttempts) {
+  return new Promise((resolve, reject) => {
+    let attempts = 0;
+
+    const poll = () => {
+      console.log("Kontrollerar status...");
+      fetch(url)
+        .then((res) => {
+          if (res.ok) {
+            resolve("Resurs tillgänglig!");
+          } else {
+            throw new Error("Resurs inte tillgänglig");
+          }
+        })
+        .catch((err) => {
+          attempts++;
+          if (attempts >= maxAttempts) {
+            reject("Max antal försök överskridna");
+          } else {
+            setTimeout(poll, interval);
+          }
+        });
+    };
+
+    poll();
+  });
+}
+
+pollServer("https://jsonplaceholder.typicode.com/posts/1", 1000, 5)
+  .then((message) => console.log(message))
+  .catch((error) => console.error(error));
+```
+
+---
+
+## progression
+Vi kan använda Promises för att när vi vill meddela eller utföra operationer under tiden som en operation håller på att utföras.
+
+Exempelvis om vi har en operation som *vi vet på förhand* tar lång tid, eller om operationen *skulle* ta lång tid.
+
+I exemplet nedan skriver vi ut en text i konsollen, men i realiteten skulle vi kunna te x anropa funktioner eller utföra andra operationer.
+
+```javascript
+function simulateLongTask() {
+  return new Promise((resolve) => {
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 20;
+      console.log(`Progress: ${progress}%`);
+      if (progress === 100) {
+        clearInterval(interval);
+        resolve("Uppgift färdig!");
+      }
+    }, 1000);
+  });
+}
+
+simulateLongTask().then((message) => console.log(message));
+
+```
+
+Om operationen, progressen, skulle ta för lång tid så kan vi avsluta en promise om den tar för lång tid.
+
+I exemplet nedan gör vi det genom att sätta en egen timeOut:
+
+```javascript
+function fetchWithTimeout(url, timeout) {
+  const fetchPromise = fetch(url);
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject("Timeout nådd"), timeout)
+  );
+
+  return Promise.race([fetchPromise, timeoutPromise]);
+}
+
+fetchWithTimeout("https://jsonplaceholder.typicode.com/posts/1", 3000)
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+
+```
+
+---
+
+## simulera cache
+
+Detta är inget som är inbyggt med promises men ibland är det meningsfullt att "simulera" en cache - t ex om vi har flera anrop till ett och samma API
+och vi vill undvika att göra samma anrop till samma endpoint (och sannolikt få tillbaka samma data i respons) så kan vi, som i exemplet nedan, simulera en cache.
+I exemplet lagrar vi URL:en till endpoint för att undvika att göra samma anrop igen.
+
+```javascript
+const cache = {};
+
+function fetchWithCache(url) {
+  if (cache[url]) {
+    return Promise.resolve(cache[url]);
+  }
+
+  return fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      cache[url] = data; // Spara i cache
+      return data;
+    });
+}
+
+fetchWithCache("https://jsonplaceholder.typicode.com/posts/1")
+  .then((data) => console.log("Hämtat:", data))
+  .catch((error) => console.error(error));
+
+```
