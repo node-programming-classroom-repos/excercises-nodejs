@@ -13,9 +13,9 @@ Särskilt kraftfullt blir också promises eftersom det finns inbyggd funktionali
 
 > [!IMPORTANT]
 > Grundläggande begrepp som är bra att känna till är de olika **state** (tillstånd) som ett promise kan ha:
-> 1. Pending: Initialt tillstånd – operationen är inte färdig.
-> 2. Fulfilled: Operationen har lyckats, och ett värde är nu tillgängligt.
-> 3. Rejected: Operationen har misslyckats, och en anledning (error) är tillgänglig.
+> 1. **Pending**: Initialt tillstånd – operationen är inte färdig.
+> 2. **Fulfilled**: Operationen har lyckats, och ett värde är nu tillgängligt.
+> 3. **Rejected**: Operationen har misslyckats, och en anledning (error) är tillgänglig.
 
 Som nämnts innan så är promise användbart för att hantera operationer som kan ta tid eller om vi t ex behöver utföra operaioner asynkront, dvs parallellt.
 Om man arbetar med node och t ex utvecklar en webbapp så är det ganska vanligt att promises används, t ex för att göra ett API anrop eller att vi ska vänta tills vi får
@@ -121,7 +121,7 @@ fetchData()
 ```
 
 
-## Promise.all - flera asynkrona operationer parallellt
+## Promise.all - asynkrona operationer parallellt
 När du behöver köra flera asynkrona operationer parallellt och vänta tills alla är färdiga kan du använda ```Promise.all```.
 
 Se exemplet nedan där 3 promises skapas och körs parallellt med anropet ```Promise.all```:
@@ -134,4 +134,20 @@ const promise3 = new Promise((resolve) => setTimeout(() => resolve("Tre"), 3000)
 Promise.all([promise1, promise2, promise3])
   .then((results) => console.log(results)) // ["Ett", "Två", "Tre"]
   .catch((error) => console.error(error));
+```
+
+
+## Promise.race - snabbaste resultatet
+Med ```Promise.race``` får man resultatet av den operation som är snabbast/först blir färdig.
+
+I detta exempel så kommer bara det första promise ge ett resultat eftersom den är snabbast:
+
+```javascript
+const promise1 = new Promise((resolve) => setTimeout(() => resolve("Snabb"), 1000));
+const promise2 = new Promise((resolve) => setTimeout(() => resolve("Långsam"), 3000));
+
+Promise.race([promise1, promise2])
+  .then((result) => console.log(result)) // "Snabb"
+  .catch((error) => console.error(error));
+
 ```
