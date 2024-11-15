@@ -1,6 +1,6 @@
 # promises
 
-Promises i JavaScript är ett kraftfullt sätt att hantera asynkron kod, dvs när kod (komponenter, anrop etc) behöver eller ska köras parallellt.
+Promises i JavaScript är ett kraftfullt sätt att hantera asynkron kod, dvs när kod (komponenter, anrop etc) behöver eller ska köras parallellt (eller sekventiellt).
 Promises används alltså för att hantera operationer som tar tid, som att läsa från ett externt API eller ladda in en stor fil. 
 
 Särskilt kraftfullt blir också promises eftersom det finns inbyggd funktionalitet för att hantera flera asynkrona operationer;
