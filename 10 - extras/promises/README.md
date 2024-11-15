@@ -50,6 +50,8 @@ myPromise
 
 ```
 
+---
+
 ## Ett första exempel
 
 Vi gör ett exempel; vi simulerar en asynkron operation med den inbyggda funktionen ```setTimeout``` som kan användas för att skapa en tidsmässig timeout.
