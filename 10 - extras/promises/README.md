@@ -145,7 +145,7 @@ tasks //vi gör ett radbryt för läsabarhetens skull
   }, Promise.resolve()) //när sista operationen i reduce körs -> finalResult
   .then((finalResult) => console.log(finalResult)); // "Uppgift 3 klar"
 
-``
+```
 
 ---
 
