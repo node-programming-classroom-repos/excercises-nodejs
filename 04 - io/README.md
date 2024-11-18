@@ -1,20 +1,71 @@
-# Input/Output (I/O) i Node.js:
+# Input/Output (I/O) i node:
 
-Input/Output (I/O) i Node.js hänvisar till hur programmet hanterar inmatning (input) och utmatning (output). Node.js har inbyggda funktioner för att interagera med filsystemet, läsa användarinmatning från konsolen och kommunicera med nätverket. Dessa funktioner är avgörande för att bygga robusta och interaktiva program.
+Input/Output (I/O) i nodes hänvisar till hur programmet hanterar inmatning (input) och utmatning (output). nodes har inbyggda funktioner för att interagera med filsystemet, läsa användarinmatning från konsolen och kommunicera med nätverket. 
+Dessa funktioner är till för att bygga robusta och interaktiva program.
 
 Här är några grundläggande I/O-aspekter i Node.js:
 
-Läsning från Konsolen:
-Du kan använda process.stdin för att läsa användarinmatning från konsolen. Detta är användbart för att skapa interaktiva kommandoradsgränssnitt.
+**Läsning från termkinalen/konsolen:**
+Du kan använda **readline** eller t ex process.stdin för att läsa användarinmatning från konsolen. Detta är användbart för att skapa interaktiva kommandoradsgränssnitt.
 
-Skrivning till Konsolen:
+Readline jämfört med process.stdin är smidigare eftersom process.stdin är mer low level.
+
+Några exempel med readline:
+
+
+```javascript
+// Importera readline-modulen
+const readline = require('readline');
+
+// Skapa en readline-interface
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Fråga efter användarens namn
+rl.question('Vad heter du? ', (namn) => {
+    // Fråga efter användarens ålder
+    rl.question('Hur gammal är du? ', (ålder) => {
+        // Skriv ut hälsning
+        console.log(`Hej ${namn}, du är ${ålder} år gammal.`);
+        
+        // Stäng readline-interface
+        rl.close();
+    });
+});
+```
+
+med en "loop", för kontinuerlig inmatning:
+
+```javascript
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+console.log('Skriv något (skriv "exit" för att avsluta):');
+
+rl.on('line', (input) => {
+    if (input.toLowerCase() === 'exit') {
+        console.log('Avslutar programmet.');
+        rl.close();
+    } else {
+        console.log(`Du skrev: ${input}`);
+    }
+});
+```
+
+Skrivning till konsolen:
 Du använder console.log() för att skriva ut meddelanden och resultat till konsolen. Detta hjälper dig att diagnostisera problem och ge feedback till användaren.
 
-Läsning och Skrivning till Filer:
+Läsning och skrivning till Filer:
 Node.js ger funktioner som fs.readFile() och fs.writeFile() för att läsa och skriva data till filer. Detta är användbart för att lagra och bearbeta information på disk.
 
 Hantering av Asynkron I/O:
-Node.js är särskilt bra på att hantera asynkron I/O-operationer. Detta innebär att programmet kan fortsätta köra andra uppgifter medan I/O-operationer pågår, vilket gör det effektivt och snabbt.
+node är särskilt bra på att hantera asynkron I/O-operationer. Detta innebär att programmet kan fortsätta köra andra uppgifter medan I/O-operationer pågår, vilket gör det effektivt och snabbt.
 
 Övningsuppgifter för Input/Output i Node.js:
 
