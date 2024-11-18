@@ -12,6 +12,117 @@ Exempel:
     const fruits = ['äpple', 'banan', 'apelsin'];
     console.log(fruits[0]); // Output: äpple
 
+
+
+Med arrayer följer många inbyggda funktioner för att arbeta med arrayer. En **stark** rekommendeation är att läsa i dokumentationen för att få kunskap om vilka användbara funktioner det finns.
+
+**length**
+Det finns också en viktig *egenskap/attribut* som går att använda i samband med arrayer: **length**.
+
+Med length kan man få reda på antalet element i en array. Mycket användbart när man arbetar med arrayer.
+
+Exempel:
+```javascript
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits.length); // Output: 3
+```
+
+Vi iteration är length nästa oumbärligt - särskilt om vi inte vet längden på den.
+
+Exempel:
+
+```javascript
+let numbers = [10, 20, 30, 40, 50];
+for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+}
+// Output:
+// 10
+// 20
+// 30
+// 40
+// 50
+```
+
+För funktioner så är här är några av de mest användbara;
+
+1. push() och pop()
+Beskrivning: push() lägger till ett eller flera element i slutet av en array, och pop() tar bort det sista elementet.
+
+```
+let fruits = ["Apple", "Banana"];
+fruits.push("Cherry");
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+
+fruits.pop();
+console.log(fruits); // Output: ["Apple", "Banana"]
+```
+
+2. shift() och unshift()
+Beskrivning: shift() tar bort det första elementet i en array, medan unshift() lägger till ett eller flera element i början.
+
+```
+let animals = ["Dog", "Cat"];
+animals.unshift("Lion");
+console.log(animals); // Output: ["Lion", "Dog", "Cat"]
+
+animals.shift();
+console.log(animals); // Output: ["Dog", "Cat"]
+```
+
+3. forEach()
+Beskrivning: Itererar över varje element i arrayen och utför en given funktion.
+
+```
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+numbers.forEach(num => console.log(num * 2));
+```
+
+4. map()
+Beskrivning: Skapar en ny array genom att applicera en funktion på varje element i arrayen.
+
+```
+let numbers = [1, 2, 3];
+let squared = numbers.map(num => num ** 2);
+console.log(squared); // Output: [1, 4, 9]
+```
+
+5. filter()
+Beskrivning: Skapar en ny array med alla element som uppfyller ett visst villkor.
+```
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4]
+```
+
+6. find()
+Beskrivning: Returnerar det första elementet som uppfyller ett visst villkor.
+
+```
+let numbers = [10, 15, 20];
+let found = numbers.find(num => num > 12);
+console.log(found); // Output: 15
+```
+
+7. includes()
+Beskrivning: Kontrollerar om ett visst värde finns i arrayen och returnerar true eller false.
+
+```
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits.includes("Banana")); // Output: true
+console.log(fruits.includes("Mango"));  // Output: false
+```
+
+Detta var ett axplock - se i dokumentationen för fler inbyggda funktioner.
+
+Nämnas kan t ex:
+- slice() (returnerar en delmängd)
+- splice() (lägger till, tar bort e.l ersätter element)
+- reduce() (mha en funktione reducera array till ett värde)
+- sort() (sortering)
+- join()  (slår ihop element till en sträng med en angiven separator)
+- reverse() (vänder på ordningen)
+
 ### Objekt (object literal):
 Ett objekt, eller object literal som är det korrekta namnet i det här sammanhanget, är en samling av nyckel-värde-par, där varje nyckel är unik. Det används för att lagra data i strukturerad form.
 
