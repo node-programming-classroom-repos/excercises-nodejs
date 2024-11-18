@@ -65,8 +65,10 @@ Exempel:
 
 ___
 
-*Nedan innehåll är att betrakta som 'extra material'. Anonyma funktioner, callbacks, arrow och closures är alla koncept som ligger lite grand utöver 'vanliga' funktioner.*
-*Med det sagt - koncentrera dig på innhållet ovan, eftersom det är viktigast, och ta sedan och läs innehållet här nedanför (för kännedom).*
+> [!NOTE]
+> Nedan innehåll är att betrakta som 'extra material'.
+> Anonyma funktioner, callbacks, arrow och closures är alla koncept som ligger lite grand utöver 'vanliga' funktioner.
+> Med det sagt - koncentrera dig på innhållet ovan, eftersom det är viktigast, och ta sedan och läs innehållet här nedanför (för kännedom).
 
 ### Anonyma funktioner:
 
