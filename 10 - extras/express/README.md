@@ -4,6 +4,7 @@ Express.js är ett snabbt och flexibelt ramverka för webbapplikationer i node. 
 
 Om man vill börja med webbapplikationer för node, så är express bra att starta med.
 
+I mappen [blog](https://github.com/node-programming-classroom-repos/excercises-nodejs/tree/main/10%20-%20extras/express/blog) finns ett litet exempel med en applikation.
 
 ## installation
 i din mapp installerar du express med:
