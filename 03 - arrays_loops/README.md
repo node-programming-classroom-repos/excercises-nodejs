@@ -1,3 +1,7 @@
+> [!NOTE]
+> Det finns mer material om arrayer/datastrukturer i avsnitet 06 - datastructures.
+> Där finns fler exempel och övningar, så ta gärna en titt där också.
+
 # Arrayer och loopar
 Arrayer och loopar är två grundläggande och mycket användbara koncept inom programmering, inklusive i Node.js. De hjälper dig att hantera data och utföra upprepade operationer effektivt. Låt oss introducera dessa två koncept i Node.js:
 
