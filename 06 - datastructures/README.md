@@ -142,44 +142,49 @@ Listor är vanliga datastrukturer som används för att lagra element i en ordna
 
 Exempel (Kö):
 
+```javascript
     const queue = [];
     queue.push('element1');
     queue.push('element2');
     const removedElement = queue.shift();
     console.log(removedElement); // Output: element1
+```
 
 ### Stackar (Stacks):
 En stack är en datastruktur där elementen läggs till och tas bort i LIFO (Last-In, First-Out) ordning. Detta innebär att det senast tillagda elementet är det första att tas bort.
 
 Exempel:
-
+```javascript
     const stack = [];
     stack.push('element1');
     stack.push('element2');
     const poppedElement = stack.pop();
     console.log(poppedElement); // Output: element2
+```
 
 ### Set (Mängder):
 Ett set är en samling av unika värden där varje värde förekommer endast en gång. Det används ofta när du behöver hantera en samling unika element.
 
 Exempel:
-
+```javascript
     const uniqueNumbers = new Set();
     uniqueNumbers.add(1);
     uniqueNumbers.add(2);
     uniqueNumbers.add(1); // Ignoreras eftersom 1 redan finns
     console.log(uniqueNumbers); // Output: Set { 1, 2 }
+```
 
 ### Map:
 En map är en samling av nyckel-värde-par där nycklarna kan vara av olika datatyper. Den används för att koppla värden till nycklar och möjliggör effektiv sökning.
 
 Exempel:
 
+```javascript
     const personer = new Map();
     personer.set('Alice', 30);
     personer.set('Bob', 25);
     console.log(personer.get('Alice')); // Output: 30
-
+```
 
 
 # Övningar
