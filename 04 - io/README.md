@@ -58,16 +58,22 @@ rl.on('line', (input) => {
 });
 ```
 
-Skrivning till konsolen:
-Du använder console.log() för att skriva ut meddelanden och resultat till konsolen. Detta hjälper dig att diagnostisera problem och ge feedback till användaren.
+**console.log:**
+Du har förmodligen redan sett och använder **console.log()** för att skriva ut meddelanden och resultat till konsolen. Detta hjälper dig att diagnostisera problem och ge feedback till användaren.
 
-Läsning och skrivning till Filer:
-Node.js ger funktioner som fs.readFile() och fs.writeFile() för att läsa och skriva data till filer. Detta är användbart för att lagra och bearbeta information på disk.
+Tipset är alltså att använda console-log för en enkel testning och felhantering för att t ex kontinuerligt skriva ut värden på variabler och annat.
 
-Hantering av Asynkron I/O:
+**Läsning och skrivning till filer:**
+
+node har funktioner som fs.readFile() och fs.writeFile() för att läsa och skriva data till filer. Detta är användbart för att lagra och bearbeta information på disk.
+
+**Hantering av Asynkron I/O:**
+
 node är särskilt bra på att hantera asynkron I/O-operationer. Detta innebär att programmet kan fortsätta köra andra uppgifter medan I/O-operationer pågår, vilket gör det effektivt och snabbt.
 
-Övningsuppgifter för Input/Output i Node.js:
+---
+
+## Övningsuppgifter för Input/Output i Node.js:
 
 Här är några övningar som hjälper dig att träna på I/O i Node.js:
 
