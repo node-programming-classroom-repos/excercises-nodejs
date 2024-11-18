@@ -1,5 +1,6 @@
 # Grundläggande koncept och begrepp om funktioner i Node.js:
-Funktioner är en viktig del av att organisera och strukturera din kod och gör det möjligt att återanvända och underhålla den på ett effektivt sätt.
+> [!IMPORTANT]
+> Funktioner är en viktig del av att organisera och strukturera din kod och gör det möjligt att återanvända och underhålla den på ett effektivt sätt.
 
 ### Funktioner är block av kod:
 
@@ -65,10 +66,14 @@ Exempel:
 
 ___
 
+
 > [!NOTE]
-> Nedan innehåll är att betrakta som 'extra material'.
+> Innehåll härifrån och nedåt är att betrakta som 'extra material'.
 > Anonyma funktioner, callbacks, arrow och closures är alla koncept som ligger lite grand utöver 'vanliga' funktioner.
 > Med det sagt - koncentrera dig på innhållet ovan, eftersom det är viktigast, och ta sedan och läs innehållet här nedanför (för kännedom).
+
+---
+
 
 ### Anonyma funktioner:
 
