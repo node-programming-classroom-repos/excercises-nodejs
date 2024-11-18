@@ -49,7 +49,7 @@ För funktioner så är här är några av de mest användbara;
 1. push() och pop()
 Beskrivning: push() lägger till ett eller flera element i slutet av en array, och pop() tar bort det sista elementet.
 
-```
+```javascript
 let fruits = ["Apple", "Banana"];
 fruits.push("Cherry");
 console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
@@ -61,7 +61,7 @@ console.log(fruits); // Output: ["Apple", "Banana"]
 2. shift() och unshift()
 Beskrivning: shift() tar bort det första elementet i en array, medan unshift() lägger till ett eller flera element i början.
 
-```
+```javascript
 let animals = ["Dog", "Cat"];
 animals.unshift("Lion");
 console.log(animals); // Output: ["Lion", "Dog", "Cat"]
@@ -73,7 +73,7 @@ console.log(animals); // Output: ["Dog", "Cat"]
 3. forEach()
 Beskrivning: Itererar över varje element i arrayen och utför en given funktion.
 
-```
+```javascript
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 numbers.forEach(num => console.log(num * 2));
 ```
@@ -81,7 +81,7 @@ numbers.forEach(num => console.log(num * 2));
 4. map()
 Beskrivning: Skapar en ny array genom att applicera en funktion på varje element i arrayen.
 
-```
+```javascript
 let numbers = [1, 2, 3];
 let squared = numbers.map(num => num ** 2);
 console.log(squared); // Output: [1, 4, 9]
@@ -89,7 +89,7 @@ console.log(squared); // Output: [1, 4, 9]
 
 5. filter()
 Beskrivning: Skapar en ny array med alla element som uppfyller ett visst villkor.
-```
+```javascript
 let numbers = [1, 2, 3, 4, 5];
 let evenNumbers = numbers.filter(num => num % 2 === 0);
 console.log(evenNumbers); // Output: [2, 4]
@@ -98,7 +98,7 @@ console.log(evenNumbers); // Output: [2, 4]
 6. find()
 Beskrivning: Returnerar det första elementet som uppfyller ett visst villkor.
 
-```
+```javascript
 let numbers = [10, 15, 20];
 let found = numbers.find(num => num > 12);
 console.log(found); // Output: 15
@@ -107,7 +107,7 @@ console.log(found); // Output: 15
 7. includes()
 Beskrivning: Kontrollerar om ett visst värde finns i arrayen och returnerar true eller false.
 
-```
+```javascript
 let fruits = ["Apple", "Banana", "Cherry"];
 console.log(fruits.includes("Banana")); // Output: true
 console.log(fruits.includes("Mango"));  // Output: false
@@ -128,12 +128,14 @@ Ett objekt, eller object literal som är det korrekta namnet i det här sammanha
 
 Exempel:
 
+```javascript
     const person = {
         namn: 'Alice',
         ålder: 30,
         stad: 'Stockholm'
     };
     console.log(person.namn); // Output: Alice
+```
 
 ### Listor (Lists):
 Listor är vanliga datastrukturer som används för att lagra element i en ordnad sekvens. Du kan använda listor för att bygga en enkel kö eller stack.
