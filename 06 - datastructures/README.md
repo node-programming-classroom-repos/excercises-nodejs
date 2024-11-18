@@ -72,23 +72,16 @@ Exempel:
 # Övningar
 
 ### Övning 1: Arrays (Arrayer)
-Skapa en array med namn på dina favoritfärger och skriv ut den första färgen.
-
+- 1.0 Skapa en array med namn på dina favoritfärger och skriv ut den första färgen.
+- 1.1 Summera alla tal: Skapa en array med talen [2, 4, 6, 8, 10]. Använd en for-loop för att summera alla tal i arrayen och skriv ut summan.
+- 1.2 Hitta längsta ordet: Givet en array med ord ["apple", "banana", "kiwi", "strawberry"], använd en for-loop för att hitta det längsta ordet i arrayen.
+- 1.3: Skapa en ny array med kvadrater: Givet arrayen [1, 2, 3, 4, 5], använd en for-loop för att skapa en ny array där varje tal är kvadraten av det ursprungliga talet.
+- 1.4: Filtrera ut jämna tal: Givet arrayen [10, 15, 20, 25, 30], använd en for-loop för att skapa en ny array som endast innehåller de jämna talen.
+- 1.5 Skriv ut namn med index: Givet arrayen ["Alice", "Bob", "Charlie", "Diana"], använd en for-loop för att skriva ut varje namn tillsammans med dess index i formatet: Index 0: Alice, Index 1: Bob, och så vidare.
 
 
 ### Övning 2: Objekt (Objects)
-
-- 2.0 Skapa ett objekt som representerar din favoritbok med egenskaper som "titel", "författare" och "årtal".
-
- - 2.1 Summera alla tal: Skapa en array med talen [2, 4, 6, 8, 10]. Använd en for-loop för att summera alla tal i arrayen och skriv ut summan.
-
-- 2.2 Hitta längsta ordet: Givet en array med ord ["apple", "banana", "kiwi", "strawberry"], använd en for-loop för att hitta det längsta ordet i arrayen.
-
-- 2.3: Skapa en ny array med kvadrater: Givet arrayen [1, 2, 3, 4, 5], använd en for-loop för att skapa en ny array där varje tal är kvadraten av det ursprungliga talet.
-
-- 2.4: Filtrera ut jämna tal: Givet arrayen [10, 15, 20, 25, 30], använd en for-loop för att skapa en ny array som endast innehåller de jämna talen.
-
-- 2.5 Skriv ut namn med index: Givet arrayen ["Alice", "Bob", "Charlie", "Diana"], använd en for-loop för att skriva ut varje namn tillsammans med dess index i formatet: Index 0: Alice, Index 1: Bob, och så vidare.
+Skapa ett objekt som representerar din favoritbok med egenskaper som "titel", "författare" och "årtal".
 
 ### Övning 3: Listor (Lists)
 Skapa en lista som fungerar som en enkel kö och utför några grundläggande köoperationer.
