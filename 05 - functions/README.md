@@ -62,6 +62,12 @@ Exempel:
     console.log("Cirkelns area är: " + circleArea); // Output: Cirkelns area är: 78.53975
     // area (och pi) är inte tillgänglig här
 
+
+___
+
+*Nedan innehåll är att betrakta som 'extra material'. Anonyma funktioner, callbacks, arrow och closures är alla koncept som ligger lite grand utöver 'vanliga' funktioner.*
+*Med det sagt - koncentrera dig på innhållet ovan, eftersom det är viktigast, och ta sedan och läs innehållet här nedanför (för kännedom).*
+
 ### Anonyma funktioner:
 
 Det är möjligt att definiera och använda funktioner utan att ge dem ett namn, så kallade anonyma funktioner.
@@ -180,8 +186,9 @@ Hantering av asynkronitet: Closures är användbara när du arbetar med asynkron
 
 Skapa "factory functions": Closures kan användas för att skapa factory functions som genererar anpassade funktioner med specifika parametrar.
 
-Closures är en viktig del av JavaScript och Node.js och kan vara mycket kraftfulla när de används på rätt sätt. De hjälper till att skapa mer modulär och återanvändbar kod.
+Closures är en viktig del av JavaScript och kan vara mycket kraftfulla när de används på rätt sätt. De hjälper till att skapa mer modulär och återanvändbar kod.
 
+---
 
 # Övningar funktioner
 
