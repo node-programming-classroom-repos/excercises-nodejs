@@ -1,5 +1,5 @@
 > [!NOTE]
-> Det finns mer material om arrayer/datastrukturer i avsnitet 06 - datastructures.
+> Det finns mer material om arrayer/datastrukturer i avsnitet [06 - datastructures](https://github.com/node-programming-classroom-repos/excercises-nodejs/blob/23c4fd48c2881860996cc75947b5e87ebc18c44e/06%20-%20datastructures/README.md).
 > Där finns fler exempel och övningar, så ta gärna en titt där också.
 
 # Arrayer och loopar
