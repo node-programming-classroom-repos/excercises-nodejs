@@ -56,6 +56,149 @@ app.post('/submit', (req, res) => {
 });
 ```
 
+
+En **route** består av:
+- En **HTTP-metod** (`GET`, `POST`, `PUT`, etc.).
+- En **URL-path** eller endpoint.
+- En callback-funktion som hanterar begäran.
+
+Exempel:
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Root Endpoint');
+});
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
+
+### I Express kan du definiera olika HTTP-metoder för samma path.
+
+```javascript
+app.get('/items', (req, res) => {
+  res.send('Hämtar alla objekt');
+});
+
+app.post('/items', (req, res) => {
+  res.send('Skapar ett nytt objekt');
+});
+
+app.put('/items/:id', (req, res) => {
+  res.send(`Uppdaterar objekt med ID ${req.params.id}`);
+});
+
+app.delete('/items/:id', (req, res) => {
+  res.send(`Tar bort objekt med ID ${req.params.id}`);
+});
+```
+
+### Med dynamiska parametrar i URL kan du skapa flexibla endpoints.
+
+```javascript
+// En dynamisk route som tar emot ett id
+app.get('/user/:id', (req, res) => {
+  const userId = req.params.id;
+  res.send(`Användar-ID är ${userId}`);
+});
+
+// Multipla parametrar
+app.get('/user/:id/order/:orderId', (req, res) => {
+  const { id, orderId } = req.params;
+  res.send(`Användar-ID: ${id}, Order-ID: ${orderId}`);
+});
+```
+
+Besök /user/123 eller /user/123/order/456 för att testa dessa routes.
+
+### Query-parametrar används för att skicka extra data i en begäran.
+
+```javascript
+app.get('/search', (req, res) => {
+  const query = req.query.q; // Hämtar query-parametern "q"
+  res.send(`Söker efter: ${query}`);
+});
+```
+Testa genom att besöka: http://localhost:3000/search?q=express.
+
+### Du kan lägga till specifik middleware för en route.
+
+```javascript
+const checkAuth = (req, res, next) => {
+  const authorized = req.headers.authorization === '1234'; // Enkel autentisering
+  if (authorized) {
+    next(); // Gå vidare till route-handler
+  } else {
+    res.status(403).send('Ej auktoriserad!');
+  }
+};
+
+app.get('/secure-data', checkAuth, (req, res) => {
+  res.send('Hemlig data!');
+});
+```
+
+### Med express.Router kan du organisera routes i moduler för bättre struktur.
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Skapa en ny router
+const userRouter = express.Router();
+
+// Definiera routes för användare
+userRouter.get('/', (req, res) => {
+  res.send('Lista över användare');
+});
+
+userRouter.get('/:id', (req, res) => {
+  res.send(`Användarinformation för ID: ${req.params.id}`);
+});
+
+// Använd routern
+app.use('/users', userRouter);
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+```
+
+I detta exempel är:
+
+/users => Lista alla användare.
+/users/:id => Visa specifik användare.
+
+
+### route chaining - du kan använda .route() för att hantera flera HTTP-metoder för samma path.
+```javascript
+app.route('/products')
+  .get((req, res) => {
+    res.send('Hämtar alla produkter');
+  })
+  .post((req, res) => {
+    res.send('Skapar en ny produkt');
+  })
+  .put((req, res) => {
+    res.send('Uppdaterar en produkt');
+  });
+
+```
+
+
+### wildcard routes med * för att fånga alla paths som inte matchar en route
+
+```javascript
+app.get('*', (req, res) => {
+  res.status(404).send('Sidan kunde inte hittas');
+});
+
+```
 ---
 
 
@@ -133,6 +276,21 @@ app.use((err, req, res, next) => {
 ````
 
 Om ett fel uppstår i din app, fångar denna middleware det och returnerar ett standardmeddelande.
+
+Felhantering med en fallback:
+```javascript
+// Specifik felroute
+app.get('/error', (req, res) => {
+  throw new Error('Något gick fel!');
+});
+
+// Global felhanteringsmiddleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Serverfel!');
+});
+
+```
 
 ---
 
