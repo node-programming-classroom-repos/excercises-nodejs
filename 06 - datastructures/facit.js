@@ -1,9 +1,69 @@
 //Övning 1: Arrays (Arrayer)
 //Skapa en array med namn på dina favoritfärger och skriv ut den första färgen.
 
-
+//1.0
 const favoriteColors = ['blå', 'röd', 'grön'];
 console.log(favoriteColors[0]); // Output: blå
+
+//1.1
+let numbers = [2, 4, 6, 8, 10];
+let sum = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+
+console.log(sum); // Output: 30
+
+//1.2
+let words = ["apple", "banana", "kiwi", "strawberry"];
+let longestWord = "";
+
+for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+        longestWord = words[i];
+    }
+}
+
+console.log(longestWord); // Output: "strawberry"
+
+
+//1.3
+let numbers = [1, 2, 3, 4, 5];
+let squaredNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    squaredNumbers.push(numbers[i] ** 2);
+}
+
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+
+//1.4
+let numbers = [10, 15, 20, 25, 30];
+let evenNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+        evenNumbers.push(numbers[i]);
+    }
+}
+
+console.log(evenNumbers); // Output: [10, 20, 30]
+
+//1.5
+let names = ["Alice", "Bob", "Charlie", "Diana"];
+
+for (let i = 0; i < names.length; i++) {
+    console.log(`Index ${i}: ${names[i]}`);
+}
+
+// Output:
+// Index 0: Alice
+// Index 1: Bob
+// Index 2: Charlie
+// Index 3: Diana
+
 
 // Övning 2: Objekt (Objects)
 //Skapa ett objekt som representerar din favoritbok med egenskaper som "titel", "författare" och "årtal".
