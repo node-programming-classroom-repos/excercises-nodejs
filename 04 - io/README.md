@@ -8,7 +8,8 @@ Här är några grundläggande I/O-aspekter i Node.js:
 **Läsning från termkinalen/konsolen:**
 Du kan använda **readline** eller t ex process.stdin för att läsa användarinmatning från konsolen. Detta är användbart för att skapa interaktiva kommandoradsgränssnitt.
 
-Readline jämfört med process.stdin är smidigare eftersom process.stdin är mer low level.
+> [!NOTE]
+> Readline jämfört med process.stdin är smidigare eftersom process.stdin är mer low level.
 
 Några exempel med readline:
 
