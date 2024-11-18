@@ -1,24 +1,25 @@
 # Kom igång med nodejs
 
 ### Node.js 
-(eller bara node) är en open source-plattform för att köra JavaScript utanför webbläsaren. Det är en populär plattform för att utveckla webbapplikationer, men kan också användas för att utveckla andra typer av applikationer, till exempel webbservrar, realtidschattprogram och spel.
+(eller bara node) är en open source-plattform för att utveckla webbapplikationer och för att andra typer av applikationer, till exempel webbservrar, realtidschattprogram och spel.
 
-Node.js har ett antal fördelar, bland annat:
+node har ett antal fördelar, bland annat:
 Det är baserat på JavaScript, ett populärt och välkänt språk.
 Det är skalbart och kan hantera stora mängder trafik.
 Det är asynkront, vilket gör det effektivt för att hantera händelsedrivna interaktioner.
 
-Node.js har också några nackdelar, bland annat:
+node har också några nackdelar, bland annat:
 Det kan vara svårt att lära sig, eftersom det är ett relativt nytt språk.
 Det kan vara resurskrävande för vissa applikationer.
 
 Här är några exempel på applikationer som går att göra i node:
-Webbapplikationer: Node.js är ett populärt val för att utveckla webbapplikationer, eftersom det är snabbt, skalbart och enkelt att använda.
-Webbservrar: Node.js kan användas för att skapa webbservrar som kan hantera stora mängder trafik.
-Realtidschattprogram: Node.js är ett bra val för att utveckla realtidschattprogram, eftersom det är asynkront och kan hantera många samtidiga anslutningar.
-Spel: Node.js kan användas för att utveckla spel, eftersom det är snabbt och effektivt.
 
-Node.js är ett kraftfullt verktyg som kan användas för att utveckla en mängd olika applikationer. Det är ett bra val för utvecklare som letar efter en skalbar och effektiv plattform för att utveckla sina applikationer.
+- Webbapplikationer: node är ett populärt val för att utveckla webbapplikationer, eftersom det är snabbt, skalbart och enkelt att använda.
+- Webbservrar: node kan användas för att skapa webbservrar som kan hantera stora mängder trafik.
+- Realtidschattprogram: Node.js är ett bra val för att utveckla realtidschattprogram, eftersom det är asynkront och kan hantera många samtidiga anslutningar.
+- Spel: Node.js kan användas för att utveckla spel, eftersom det är snabbt och effektivt.
+
+node är alltså ett kraftfullt verktyg som kan användas för att utveckla en mängd olika applikationer. Det är ett bra val för utvecklare som letar efter en skalbar och effektiv plattform för att utveckla sina applikationer i.
 
 ### Bra att veta
 När man startar ett node-projekt så skapas en s.k "package.json"-fil. Det är en fil som används för att beskriva ett Node.js-paket. Den innehåller information om paketets namn, version, beroenden och andra metadata.
