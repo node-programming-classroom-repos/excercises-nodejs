@@ -15,6 +15,8 @@ npm install express
 
 ---
 
+## ÖVERBLICK
+
 Ett grundläggande exempel som startar en server som lyssnar på s.k GET-requests (typ hämta sidor från webbläsaren):
 
 ```javascript
@@ -38,7 +40,7 @@ kör scriptet och öppna webbläsaren med länken ```http://localhost:3000```.
 
 ---
 
-## routing
+## ROUTING
 
 Routing innebär att man definiera s.k endpoints (dvs url:er som kan nås via applikationen). 
 Till dessa routes lägger vi till logik som hanterar och utför operationer (som är tänkta för resp route).
@@ -99,7 +101,36 @@ app.delete('/items/:id', (req, res) => {
 });
 ```
 
-### Med dynamiska parametrar i URL kan du skapa flexibla endpoints.
+## URL-parametrar och query-parametrar
+
+URL-parametrar och query-parametrar är data som kan skickas med ett request.
+
+För en URL så kan det se ut så här;
+
+- URL parameter: https://example.com/user/45
+där parametern är user och värdet 45
+- query parameter: https://example.com/search?str='users'
+där search är parametern och users värdet (sträng)
+
+Datat kan användas i vår applikation för att utföra specifika operationer, tex hämta viss data beroende och returnera med responset.
+
+```javascript
+// Parametrar i URL
+app.get('/user/:id', (req, res) => {
+  res.send(`Användar-ID: ${req.params.id}`);
+});
+
+// Query-parametrar
+app.get('/search', (req, res) => {
+  const query = req.query.q;
+  res.send(`Du söker efter: ${query}`);
+});
+```
+
+Besök t.ex. /user/123 eller /search?q=express för att se resultatet.
+
+
+### dynamiska parametrar med ett request
 
 ```javascript
 // En dynamisk route som tar emot ett id
@@ -117,21 +148,21 @@ app.get('/user/:id/order/:orderId', (req, res) => {
 
 Besök /user/123 eller /user/123/order/456 för att testa dessa routes.
 
-### Query-parametrar används för att skicka extra data i en begäran.
+### ej definerade query-parametrar
 
 ```javascript
 app.get('/search', (req, res) => {
-  const query = req.query.q; // Hämtar query-parametern "q"
+  const query = req.query.q; // Hämtar query-parametern "q" i requestet
   res.send(`Söker efter: ${query}`);
 });
 ```
 Testa genom att besöka: http://localhost:3000/search?q=express.
 
-### Du kan lägga till specifik middleware för en route.
+### middleware för en route
 
 ```javascript
 const checkAuth = (req, res, next) => {
-  const authorized = req.headers.authorization === '1234'; // Enkel autentisering
+  const authorized = req.headers.authorization === '1234'; // vi simulerar autentisering
   if (authorized) {
     next(); // Gå vidare till route-handler
   } else {
@@ -144,7 +175,7 @@ app.get('/secure-data', checkAuth, (req, res) => {
 });
 ```
 
-### Med express.Router kan du organisera routes i moduler för bättre struktur.
+### Med express.Router kan du organisera routes i moduler
 ```javascript
 const express = require('express');
 const app = express();
@@ -203,7 +234,7 @@ app.get('*', (req, res) => {
 ---
 
 
-## middleware
+## MIDDLEWARE
 
 Middleware är funktioner som kan manipulera request och response eller köra logik mellan att en begäran tas emot och ett svar skickas.
 
@@ -245,26 +276,6 @@ Om du har en mapp public med en index.html, blir den tillgänglig på rot-URL, t
 
 ---
 
-## parametrar och query-parametrar
-
-För att arbeta med URL-parametrar och query-parametrar.
-
-```javscript
-// Parametrar i URL
-app.get('/user/:id', (req, res) => {
-  res.send(`Användar-ID: ${req.params.id}`);
-});
-
-// Query-parametrar
-app.get('/search', (req, res) => {
-  const query = req.query.q;
-  res.send(`Du söker efter: ${query}`);
-});
-```
-
-Besök t.ex. /user/123 eller /search?q=express för att se resultatet.
-
----
 
 ## felhantering
 
