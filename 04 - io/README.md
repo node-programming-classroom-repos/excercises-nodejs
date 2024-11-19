@@ -88,6 +88,8 @@ Om vi vill hantera flera inmatningar så kan vi kapsla in inläsningen i en loop
 
 Exempel:
 ```javascript
+const prompt = require('prompt-sync')();
+
 console.log('Mata in något ("exit" för att avsluta):');
 
 while (true) {
