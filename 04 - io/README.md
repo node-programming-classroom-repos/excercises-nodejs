@@ -1,15 +1,18 @@
 # Input/Output (I/O) i node:
 
-Input/Output (I/O) i nodes hänvisar till hur programmet hanterar inmatning (input) och utmatning (output). nodes har inbyggda funktioner för att interagera med filsystemet, läsa användarinmatning från konsolen och kommunicera med nätverket. 
+Input/Output (I/O) i nodes hänvisar till hur programmet hanterar inmatning (input) och utmatning (output). node har inbyggda funktioner för att interagera med filsystemet, läsa användarinmatning från konsolen och kommunicera med nätverket. 
 Dessa funktioner är till för att bygga robusta och interaktiva program.
 
-Här är några grundläggande I/O-aspekter i Node.js:
+Grunder i I/O i node:
 
-**Läsning från termkinalen/konsolen:**
+**Läsning från terminalen/konsolen:**
 Du kan använda **readline** eller t ex process.stdin för att läsa användarinmatning från konsolen. Detta är användbart för att skapa interaktiva kommandoradsgränssnitt.
 
-> [!NOTE]
+> [!TIP]
 > Readline jämfört med process.stdin är smidigare eftersom process.stdin är mer low level.
+> prompt-sync är en extern modul som gör inmatning mycket smidigt - läs mer nedan
+
+### readline
 
 Några exempel med readline:
 
@@ -58,6 +61,49 @@ rl.on('line', (input) => {
     }
 });
 ```
+
+---
+
+### prompt-sync
+
+är ett externt paket/modul för att smidigt hantera inmatning i node.
+
+Du behöver installera paketet;
+```bash
+npm install prompt-sync
+```
+
+
+Här är ett exmpel där vi läser in från terminalen:
+
+```javascript
+const prompt = require('prompt-sync')();
+
+let fname = prompt('Vad heter du? ');
+
+console.log("Hej", fname);
+```
+
+Om vi vill hantera flera inmatningar så kan vi kapsla in inläsningen i en loop.
+
+Exempel:
+```javascript
+console.log('Mata in något ("exit" för att avsluta):');
+
+while (true) {
+    const input = prompt('>>> '); // inmatning
+
+    if (input.toLowerCase() === 'exit') {
+        console.log('Hej då!');
+        break;
+    }
+
+    console.log('Du skrev:', input);
+}
+
+```
+
+---
 
 **console.log:**
 Du har förmodligen redan sett och använder **console.log()** för att skriva ut meddelanden och resultat till konsolen. Detta hjälper dig att diagnostisera problem och ge feedback till användaren.
