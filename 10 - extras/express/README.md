@@ -77,7 +77,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
+```
 
 ### I Express kan du definiera olika HTTP-metoder för samma path.
 
