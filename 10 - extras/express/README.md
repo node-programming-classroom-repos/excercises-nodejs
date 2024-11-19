@@ -238,9 +238,25 @@ app.get('*', (req, res) => {
 
 Middleware är funktioner som kan manipulera request och response eller köra logik mellan att en begäran tas emot och ett svar skickas.
 
+Används för att bearbeta begäranden och svar i en kedja innan en begäran når en slutlig route-handler eller skickar ett svar. 
+
 Det finns inbyggda middleware eller om vi vill konstrurera sådana själva.
 
 Rent konkret innebär en middleware att man utför någoting, efter ett request kommit in, tills dess ett response skickas tillbaka.
+
+En middleware-funktion har följande signatur:
+```javscript
+function middleware(req, res, next) {
+  // Logik här
+  next(); // Vidare till nästa middleware
+}
+```
+
+**Typer av Middleware**
+- Inbyggd middleware: Levereras med Express (t.ex. express.json).
+- 3rd party middleware: Installera med npm (t.ex. morgan).
+- Egen middleware: Du skapar själv för anpassad logik.
+
 
 I exemplet nedan: när man skickar en POST-begäran till route ```/data``` med JSON-data, loggas begäran i konsolen tack vare middleware-funktionen.
 
@@ -258,14 +274,52 @@ app.use((req, res, next) => {
 app.post('/data', (req, res) => {
   res.send(`Mottagen data: ${JSON.stringify(req.body)}`);
 });
+```
 
+Här är ytterligare ett exmpel där vi 'hittar på' en egen autensiering med en API-nyckel som ska inkluderas i headern i requestet:
+
+```javascript
+// vår middleware för enkel autentisering
+const authMiddleware = (req, res, next) => {
+  const apiKey = req.headers['x-api-key'];
+  if (apiKey === '12345') {
+    next(); // Fortsätt om autentiseringen är lyckad
+  } else {
+    res.status(403).send('Ej auktoriserad');
+  }
+};
+
+// Använd middleware på en (hemlig/skyddad) route
+app.get('/secure', authMiddleware, (req, res) => {
+  res.send('Välkommen till den skyddade sidan!');
+});
+
+```
+
+Ytterligare ett exempel skulle kunna vara om man vill validera inkommande data för en route/request:
+
+```javascript
+const validateData = (req, res, next) => {
+  const { title, content } = req.body;
+  if (!title || !content) {
+    return res.status(400).send('Titel och innehåll krävs!');
+  }
+  next();
+};
+
+// Använd middleware på en POST-route
+app.post('/posts', express.json(), validateData, (req, res) => {
+  const { title, content } = req.body;
+  res.send(`Inlägg med titel "${title}" sparat!`);
+});
 ```
 
 ---
 
-## statisk filserver (html, css, js)
+## middleware för statisk filserver (html, css, js)
 
-Express kan också användas för att tjäna statiska filer som HTML, CSS och JavaScript.
+Express kan också användas för att tjäna statiska filer som HTML, CSS och JavaScript eftersom det finns en inbyggd 
+middleware för att servera statiska filer, t.ex. HTML, CSS, och JavaScript.
 
 ```javascript
 app.use(express.static('public'));
@@ -277,7 +331,9 @@ Om du har en mapp public med en index.html, blir den tillgänglig på rot-URL, t
 ---
 
 
-## felhantering
+## middleware för felhantering
+
+Express har stöd för särskilda middleware för att hantera fel - dessa har fyra argument: ```err, req, res, next)```.
 
 Du kan använda ett globalt felhanteringsmiddleware:
 ```javascript
@@ -289,7 +345,7 @@ app.use((err, req, res, next) => {
 
 Om ett fel uppstår i din app, fångar denna middleware det och returnerar ett standardmeddelande.
 
-Felhantering med en fallback:
+Felhantering med en fallback kan göras så här:
 ```javascript
 // Specifik felroute
 app.get('/error', (req, res) => {
@@ -304,28 +360,74 @@ app.use((err, req, res, next) => {
 
 ```
 
----
+## kombinera middleware med express.Router
 
-## Express router 
-
-Med express inbyggda Router kan vi organisera våra routes i moduler.
+Bra att veta kan vara att om man organiserar sina routes med ```express.Router```, kan man använda middleware specifikt för en router.
 
 ```javascript
-const router = express.Router();
+const userRouter = express.Router();
 
-// Definiera routes i routern
-router.get('/profile', (req, res) => {
-  res.send('Profil-sidan');
+userRouter.use((req, res, next) => {
+  console.log('User-router middleware');
+  next();
 });
 
-router.get('/settings', (req, res) => {
-  res.send('Inställningssidan');
+userRouter.get('/profile', (req, res) => {
+  res.send('Användarprofil');
 });
 
-// Använd routern i appen
-app.use('/user', router);
-````
+app.use('/users', userRouter);
+```
 
-När du nu besöker /user/profile eller /user/settings, triggas de respektive handlers.
+## 3rd party middleware (externa moduler)
+
+Du kan använda tredjepartspaket som redan löser vanligt återkommande "problem". 
+
+Du behöver installera dessa eftersom de är externa moduler.
+
+Här är några exempel:
+
+**morgan** - för loggning
+
+```javascript
+const morgan = require('morgan');
+app.use(morgan('dev')); // Loggar varje begäran i konsolen
+```
+
+**cors** - för cross origin sharing
+
+```javascript
+const cors = require('cors');
+app.use(cors()); // Tillåter begäranden från andra domäner
+```
+
+
+## global och specifik middleware
+
+Middleware kan tillämpas globalt på ALL routes eller specifikt för enskilda routes.
+
+Skillnaden är ett funktionsanrop: **use** för globala och för specifika så anges middleware för just den routen.
+
+Om vi ska applicera globalt:
+
+```javascript
+app.use((req, res, next) => {
+  console.log('Detta gäller alla routes!');
+  next();
+});
+```
+
+för en specifik route:
+
+```javascript
+app.get('/specific', (req, res, next) => {
+  console.log('Specifik route-middleware');
+  next();
+}, (req, res) => {
+  res.send('Middleware färdig, här är svaret!');
+});
+```
 
 ---
+
+
