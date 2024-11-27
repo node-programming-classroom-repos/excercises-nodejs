@@ -5,21 +5,28 @@ Moduler gör det alltså möjligt att organisera och återanvända kod på ett s
 
 Det finns olika metoder att inkludera moduler i js:
 
+**import**, **require** eller en blanding av båda.
+
 
 > [!TIP]
-> Det finns olika sätt att hämta in och exportera sina moduler; **require** eller **import**
 >
 > **Använd require om:**
+> 
 > Projektet redan använder CommonJS.
+> 
 > Du snabbt vill inkludera en modul utan att ändra filändelser eller konfiguration.
 > 
 > **Använd import om:**
+> 
 > Du bygger ett nytt projekt med modern JavaScript.
+> 
 > Du behöver använda ESM-baserade tredjepartsbibliotek eller vill dra nytta av features som import/export.
 >
 > **Blandning av require och import**
 >
 > Om du använder import i ett ESM-projekt men behöver använda CommonJS-moduler, kan du använda funktionen import() för dynamisk import:
+>
+> const fs = await import('fs');
 
 
 > För **import** gäller att:
@@ -39,8 +46,9 @@ Om du startar ett nytt projekt, använd import eftersom ESM är framtiden.
 
 För äldre projekt, eller om kompatibilitet med äldre moduler är viktigt, håll dig till require.
 
+---
 
-Exempel 1: Skapa en Enkel Modul
+Exempel 1 med require: Skapa en Enkel Modul
 
 Anta att du vill skapa en enkel modul som räknar summan av två tal. Först måste du skapa en modulfil (till exempel summa.js) med följande innehåll:
 ```javascript
@@ -72,6 +80,56 @@ console.log(`Summan är: ${sum}`); // Output: Summan är: 8
 ```
 
 Här importerar vi summa.js-modulen med require och använder funktionen från modulen för att räkna ut summan av två tal. Modulerna laddas bara en gång, så du kan använda dem i flera delar av din applikation.
+
+---
+Exempel 1 med import:
+
+```javascript
+// mathUtils.js
+
+// Exportera funktioner
+export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+}
+
+// Exportera en standardfunktion (valfritt)
+export default function multiply(a, b) {
+    return a * b;
+}
+```
+
+Exempel 2 - använda modulen med import:
+
+```javascript
+// app.js
+
+// Importera specifika funktioner
+import { add, subtract } from './mathUtils.js';
+
+// Importera standardexporten
+import multiply from './mathUtils.js';
+
+console.log("Addition:", add(5, 3));       // Output: Addition: 8
+console.log("Subtraktion:", subtract(5, 3)); // Output: Subtraktion: 2
+console.log("Multiplikation:", multiply(5, 3)); // Output: Multiplikation: 15
+```
+
+Du måste också "aktivera" ditt projekt för ESM. Det kan du göra på 2 sätt;
+
+- 1 i package.json:
+```javascript
+{
+  "name": "example",
+  "type": "module",
+  "version": "1.0.0"
+}
+```
+- 2 använda filändelse mjs -> mathUtils.mjs
+Då behöver du inte ändra i package.json
 
 
 ### Exempel: Dela Upp En Stor Modul
