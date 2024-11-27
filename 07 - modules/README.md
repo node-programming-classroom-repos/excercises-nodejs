@@ -53,13 +53,13 @@ const isValidPassword = verifyPassword(userInput, user.password);
 
 ### Exempel: Använda Tredjepartsmoduler
 
-node har ett rikt ekosystem av tredjepartsmoduler som du kan använda i dina projekt. Du kan installera och använda dessa moduler med hjälp av Node.js npm-paketverktyg. Här är ett exempel där vi använder 'axios', en populär HTTP-klient, för att göra en GET-förfrågan till en extern API:
+node har ett rikt ekosystem av tredjepartsmoduler som du kan använda i dina projekt. Du kan installera och använda dessa moduler med hjälp av npm. Här är ett exempel där vi använder 'axios', en HTTP-klient, för att göra en GET-förfrågan till ett externt API:
 
 ```javascript
 // Installera axios med npm (npm install axios)
 const axios = require('axios');
 
-// Gör en GET-förfrågan till en extern API
+// Gör en GET-förfrågan
 axios.get('https://api.example.com/data')
     .then((response) => {
         console.log('Svar från API:', response.data);
