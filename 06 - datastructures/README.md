@@ -8,10 +8,10 @@ I Javascript (och node) finns t ex:
 En array, som vi tidigare behandlat, är en ordnad lista med element som du kan komma åt med hjälp av deras position eller index. Det är en vanlig datastruktur för att lagra flera värden i en variabel.
 
 Exempel:
-
-    const fruits = ['äpple', 'banan', 'apelsin'];
-    console.log(fruits[0]); // Output: äpple
-
+```javascript
+const fruits = ['äpple', 'banan', 'apelsin'];
+console.log(fruits[0]); // Output: äpple
+```
 
 
 Med arrayer följer många inbyggda funktioner för att arbeta med arrayer. En **stark** rekommendeation är att läsa i dokumentationen för att få kunskap om vilka användbara funktioner det finns.
@@ -129,25 +129,25 @@ Ett objekt, eller object literal som är det korrekta namnet i det här sammanha
 Exempel:
 
 ```javascript
-    const person = {
-        namn: 'Alice',
-        ålder: 30,
-        stad: 'Stockholm'
-    };
-    console.log(person.namn); // Output: Alice
+const person = {
+    name: 'Linda',
+    age: 30,
+    city: 'Örebro'
+};
+console.log(person.name); // Output: Linda
 ```
 
 ### Listor (Lists):
 Listor är vanliga datastrukturer som används för att lagra element i en ordnad sekvens. Du kan använda listor för att bygga en enkel kö eller stack.
 
-Exempel (Kö):
+Exempel Queue (kö):
 
 ```javascript
-    const queue = [];
-    queue.push('element1');
-    queue.push('element2');
-    const removedElement = queue.shift();
-    console.log(removedElement); // Output: element1
+const queue = [];
+queue.push('element1');
+queue.push('element2');
+const removedElement = queue.shift();
+console.log(removedElement); // Output: element1
 ```
 
 ### Stackar (Stacks):
@@ -155,11 +155,11 @@ En stack är en datastruktur där elementen läggs till och tas bort i LIFO (Las
 
 Exempel:
 ```javascript
-    const stack = [];
-    stack.push('element1');
-    stack.push('element2');
-    const poppedElement = stack.pop();
-    console.log(poppedElement); // Output: element2
+const stack = [];
+stack.push('element1');
+stack.push('element2');
+const poppedElement = stack.pop();
+console.log(poppedElement); // Output: element2
 ```
 
 ### Set (Mängder):
@@ -167,11 +167,11 @@ Ett set är en samling av unika värden där varje värde förekommer endast en 
 
 Exempel:
 ```javascript
-    const uniqueNumbers = new Set();
-    uniqueNumbers.add(1);
-    uniqueNumbers.add(2);
-    uniqueNumbers.add(1); // Ignoreras eftersom 1 redan finns
-    console.log(uniqueNumbers); // Output: Set { 1, 2 }
+const uniqueNumbers = new Set();
+uniqueNumbers.add(1);
+uniqueNumbers.add(2);
+uniqueNumbers.add(1); // Ignoreras eftersom 1 redan finns
+console.log(uniqueNumbers); // Output: Set { 1, 2 }
 ```
 
 ### Map:
@@ -180,10 +180,10 @@ En map är en samling av nyckel-värde-par där nycklarna kan vara av olika data
 Exempel:
 
 ```javascript
-    const personer = new Map();
-    personer.set('Alice', 30);
-    personer.set('Bob', 25);
-    console.log(personer.get('Alice')); // Output: 30
+const personer = new Map();
+personer.set('Kent', 30);
+personer.set('Olaf', 25);
+console.log(personer.get('Kent')); // Output: 30
 ```
 
 
