@@ -3,6 +3,43 @@ används för att organisera och återanvända kod. Moduler är små enheter av 
 Moduler gör det alltså möjligt att organisera och återanvända kod på ett strukturerat sätt, vilket är särskilt värdefullt när du bygger komplexa applikationer. node erbjuder också inbyggda moduler och möjligheten att skapa egna anpassade moduler för att passa dina specifika behov.
 
 
+Det finns olika metoder att inkludera moduler i js:
+
+
+> [!TIP]
+> Det finns olika sätt att hämta in och exportera sina moduler; **require** eller **import**
+>
+> **Använd require om:**
+> Projektet redan använder CommonJS.
+> Du snabbt vill inkludera en modul utan att ändra filändelser eller konfiguration.
+> 
+> **Använd import om:**
+> Du bygger ett nytt projekt med modern JavaScript.
+> Du behöver använda ESM-baserade tredjepartsbibliotek eller vill dra nytta av features som import/export.
+>
+> **Blandning av require och import**
+>
+> Om du använder import i ett ESM-projekt men behöver använda CommonJS-moduler, kan du använda funktionen import() för dynamisk import:
+
+
+> För **import** gäller att:
+> 
+> Används i ECMAScript Modules (ESM), som är standard i modern JavaScript och stöds fullt ut i nyare versioner av Node.js (från v12 och framåt, med stabilitet från v14).
+> 
+> Kräver att du aktiverar ESM i ditt projekt:
+> 
+> - Genom att sätta "type": "module" i din package.json.
+>  
+> - Eller genom att använda .mjs-filändelse.
+
+
+**Rekommendation**
+
+Om du startar ett nytt projekt, använd import eftersom ESM är framtiden. 
+
+För äldre projekt, eller om kompatibilitet med äldre moduler är viktigt, håll dig till require.
+
+
 Exempel 1: Skapa en Enkel Modul
 
 Anta att du vill skapa en enkel modul som räknar summan av två tal. Först måste du skapa en modulfil (till exempel summa.js) med följande innehåll:
