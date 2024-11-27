@@ -9,13 +9,14 @@ Funktioner är block av kod som utför en viss uppgift när de anropas.
 
 Exempel:
 
+```javascript
+function sayHello() {
+    console.log("Hej från funktionen!");
+}
 
-    function sayHello() {
-        console.log("Hej från funktionen!");
-    }
-
-    // Anropa funktionen
-    sayHello(); // Output: Hej från funktionen!
+// Anropa funktionen
+sayHello(); // Output: Hej från funktionen!
+```
 
 ### Funktioner tar emot argument:
 
@@ -24,12 +25,13 @@ Argumenten gör funktionen mer flexibel genom att tillåta olika värden att ski
 
 Exempel:
 
+```javascript
+function greet(name) {
+    console.log("Hej, " + name + "!");
+}
 
-    function greet(name) {
-        console.log("Hej, " + name + "!");
-    }
-
-    greet("Alice"); // Output: Hej, Alice!
+greet("Alice"); // Output: Hej, Alice!
+```
 
 ### Funktioner returnerar värden:
 
@@ -38,13 +40,14 @@ Det returnerade värdet kan användas eller sparas för senare användning.
 
 Exempel:
 
+```javascript
+function add(a, b) {
+    return a + b;
+}
 
-    function add(a, b) {
-        return a + b;
-    }
-
-    const sum = add(3, 5);
-    console.log("Summan är: " + sum); // Output: Summan är: 8
+const sum = add(3, 5);
+console.log("Summan är: " + sum); // Output: Summan är: 8
+```
 
 ### Lokala variabler och scope:
 
@@ -52,17 +55,17 @@ Variabler deklarerade inuti en funktion är "lokal" för den funktionen och är 
 Detta skapar en "scope" för variabler, vilket undviker konflikter med variabler i globalt scope.
 
 Exempel:
+```javascript
+function calculateArea(radius) {
+    const pi = 3.14159; // Lokal variabel
+    const area = pi * radius * radius;
+    return area;
+}
 
-    function calculateArea(radius) {
-        const pi = 3.14159; // Lokal variabel
-        const area = pi * radius * radius;
-        return area;
-    }
-
-    const circleArea = calculateArea(5);
-    console.log("Cirkelns area är: " + circleArea); // Output: Cirkelns area är: 78.53975
-    // area (och pi) är inte tillgänglig här
-
+const circleArea = calculateArea(5);
+console.log("Cirkelns area är: " + circleArea); // Output: Cirkelns area är: 78.53975
+// area (och pi) är inte tillgänglig här
+```
 
 ___
 
@@ -80,12 +83,13 @@ ___
 Det är möjligt att definiera och använda funktioner utan att ge dem ett namn, så kallade anonyma funktioner.
 
 Exempel:
+```javascript
+const greet = function(name) {
+    console.log("Hej, " + name + "!");
+};
 
-    const greet = function(name) {
-        console.log("Hej, " + name + "!");
-    };
-
-    greet("Bob"); // Output: Hej, Bob!
+greet("Bob"); // Output: Hej, Bob!
+```
 
 ### Callback-funktioner:
 
@@ -93,21 +97,22 @@ En callback-funktion är en funktion som skickas som argument till en annan funk
 Callback-funktioner används ofta för asynkron kod, som hantering av filinläsning eller nätverksanrop.
 
 Exempel:
+```javascript
+function processUserData(userData, callback) {
+    // Bearbeta användardata
+    const processedData = "Bearbetad data: " + userData;
+    
+    // Anropa callback-funktionen med resultatet
+    callback(processedData);
+}
 
-    function processUserData(userData, callback) {
-        // Bearbeta användardata
-        const processedData = "Bearbetad data: " + userData;
-        
-        // Anropa callback-funktionen med resultatet
-        callback(processedData);
-    }
+function displayResult(result) {
+    console.log(result);
+}
 
-    function displayResult(result) {
-        console.log(result);
-    }
-
-    processUserData("Alice", displayResult);
-    // Output: Bearbetad data: Alice
+processUserData("Alice", displayResult);
+// Output: Bearbetad data: Alice
+```
 
 ### Arrow-funktioner 
 (även kända som "fat arrow"-funktioner) är en feature i JavaScript och Node.js som ger en kortare och mer läsbar metod att definiera funktioner. De är särskilt användbara när du behöver en enkel funktion. 
@@ -118,40 +123,44 @@ Arrow-funktioner har en kortare syntax jämfört med vanliga funktioner. Syntaxe
 Om funktionen har en enda parameter kan du utelämna parenteserna runt parametern.
 
 Exempel:
+```javascript
+const greet = name => {
+    console.log(`Hej, ${name}!`);
+};
 
-    const greet = name => {
-        console.log(`Hej, ${name}!`);
-    };
-
-    greet("Alice"); // Output: Hej, Alice!
+greet("Alice"); // Output: Hej, Alice!
+```
 
 Om funktionen utför en enkel uppgift eller har en enkel return-sats kan du använda den kortaste formen av en arrow-funktion.
 
 Exempel:
+```javascript
+const add = (a, b) => a + b;
 
-    const add = (a, b) => a + b;
-
-    const result = add(3, 5);
-    console.log(`Summan är: ${result}`); // Output: Summan är: 8
+const result = add(3, 5);
+console.log(`Summan är: ${result}`); // Output: Summan är: 8
+```
 
 Om funktionen inte tar några parametrar, måste du använda tomma parenteser ().
 
 Exempel:
+```javascript
+const sayHello = () => {
+    console.log("Hej från arrow-funktion!");
+};
 
-    const sayHello = () => {
-        console.log("Hej från arrow-funktion!");
-    };
-
-    sayHello(); // Output: Hej från arrow-funktion!
+sayHello(); // Output: Hej från arrow-funktion!
+```
 
 Om funktionen bara returnerar ett objekt, måste du använda parenteser runt objektet för att undvika att det tolkas som en blockkropp.
 
 Exempel:
+```javascript
+const createPerson = (name, age) => ({ name, age });
 
-    const createPerson = (name, age) => ({ name, age });
-
-    const person = createPerson("Alice", 30);
-    console.log(person); // Output: { name: 'Alice', age: 30 }
+const person = createPerson("Alice", 30);
+console.log(person); // Output: { name: 'Alice', age: 30 }
+```
 
 Arrow-funktioner har en mer kompakt syntax jämfört med vanliga funktioner och de delar även sitt scope (this) med den omgivande koden, vilket kan vara användbart i vissa situationer. Men notera att de inte passar för alla scenarier, särskilt när du behöver använda this på ett mer komplext sätt.
 
@@ -165,18 +174,20 @@ Exempel:
 
 Anta att vi har en funktion som skapar och returnerar en inre funktion. Den inre funktionen har tillgång till variabeln message, som har ett omgivande scope i den yttre funktionen.
 
-    function outerFunction() {
-        const message = 'Hej från outerFunction!';
+```javascript
+function outerFunction() {
+    const message = 'Hej från outerFunction!';
 
-        function innerFunction() {
-            console.log(message);
-        }
-
-        return innerFunction;
+    function innerFunction() {
+        console.log(message);
     }
 
-    const closureExample = outerFunction(); // Här skapas en "closure"
-    closureExample(); // När du anropar closureExample, skriver det ut "Hej från outerFunction!"
+    return innerFunction;
+}
+
+const closureExample = outerFunction(); // Här skapas en "closure"
+closureExample(); // När du anropar closureExample, skriver det ut "Hej från outerFunction!"
+```
 
 I detta exempel är innerFunction en inre funktion som skapas inuti outerFunction. När outerFunction körs och innerFunction returneras, bildas en "closure". Det innebär att innerFunction har tillgång till variabeln message, även om outerFunction har avslutats.
 
