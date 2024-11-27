@@ -3,62 +3,63 @@
 > Där finns fler exempel och övningar, så ta gärna en titt där också.
 
 # Arrayer och loopar
-Arrayer och loopar är två grundläggande och mycket användbara koncept inom programmering, inklusive i Node.js. De hjälper dig att hantera data och utföra upprepade operationer effektivt. Låt oss introducera dessa två koncept i Node.js:
+Arrayer och loopar är två grundläggande och mycket användbara koncept inom programmering, inklusive i node. De hjälper dig att hantera data och utföra upprepade operationer effektivt. Låt oss introducera dessa två koncept i Node.js:
 
-Arrayer i Node.js:
+Arrayer:
 
     En array är en datatyp som används för att lagra en samling av värden, t.ex. tal, strängar eller objekt, i en enda variabel.
     Varje värde i en array har ett unikt index (börjar vanligtvis från 0) som används för att komma åt det.
-    I Node.js och JavaScript deklareras en array med hakparenteser [] och värdena separeras med kommatecken.
+    I node och JavaScript deklareras en array med hakparenteser [] och värdena separeras med kommatecken.
 
-Exempel på en array i Node.js:
+Exempel på en array:
 
-javascript
+```javascript
 
-    let numbers = [1, 2, 3, 4, 5];
-    let fruits = ['äpple', 'banan', 'apelsin'];
+let numbers = [1, 2, 3, 4, 5];
+let fruits = ['äpple', 'banan', 'apelsin'];
+```
 
 numbers och fruits är arrayer. Se dessa som varaibler som tillåter flera värden att lagras.
 Notera hakparenteserna som innesluter värdena, separerade med , (kommatecken).
 Det är också tillåtet att blanda värden av olika datatyper.
 
 
-Loopar i Node.js:
+Loopar:
 
     En loop är en struktur som låter dig utföra samma kodblock upprepade gånger baserat på ett villkor eller en samling av värden (som en array).
     Loopar är användbara för att automatisera upprepade uppgifter och för att hantera data i arrayer.
     De två vanligaste typerna av loopar i Node.js är for-loopen och while-loopen.
 
-Exempel på en for-loop i Node.js:
+Exempel på en for-loops:
 
-javascript
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log('Iteration ' + i);
+}
+```
 
-    for (let i = 0; i < 5; i++) {
-        console.log('Iteration ' + i);
-    }
+Exempel på en while-loop:
 
-Exempel på en while-loop i Node.js:
-
-javascript
-
-    let i = 0;
-    while (i < 5) {
-        console.log('Iteration ' + i);
-        i++;
-    }
+```javascript
+let i = 0;
+while (i < 5) {
+    console.log('Iteration ' + i);
+    i++;
+}
+```
 
 Användning av Arrayer och Loopar tillsammans:
 
-En vanlig användning av loopar i Node.js är att iterera över alla element i en array för att utföra en viss operation på varje element.
+En vanlig användning av loopar  är att iterera över alla element i en array för att utföra en viss operation på varje element.
 
 Exempel på att använda en for-loop för att iterera över en array:
 
-javascript
-
-    let colors = ['röd', 'grön', 'blå'];
-    for (let i = 0; i < colors.length; i++) {
-        console.log('Färg: ' + colors[i]);
-    }
+```javascript
+let colors = ['röd', 'grön', 'blå'];
+for (let i = 0; i < colors.length; i++) {
+    console.log('Färg: ' + colors[i]);
+}
+```
 
 Du kan också använda loopar för att fylla en array med data eller för att söka efter ett specifikt element i en array.
 
