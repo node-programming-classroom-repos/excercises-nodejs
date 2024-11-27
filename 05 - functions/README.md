@@ -194,17 +194,14 @@ I detta exempel är innerFunction en inre funktion som skapas inuti outerFunctio
 När vi senare anropar closureExample, utför den inre funktionen innerFunction fortfarande console.log(message) och skriver ut "Hej från outerFunction!" till konsolen, även om outerFunction redan har avslutats. Detta beror på att innerFunction har en "closure" som behåller referensen till message.
 
 
-Closures är användbara i olika sammanhang:
+**Closures är användbara i olika sammanhang:**
 
-Skapa privat "scope": Du kan använda closures för att skapa privata variabler och funktioner som inte är tillgängliga utanför en viss funktion.
+- Skapa privat "scope": Du kan använda closures för att skapa privata variabler och funktioner som inte är tillgängliga utanför en viss funktion.
+- callbacks: Många callback-funktioner i Node.js använder closures för att hålla och använda data från det omgivande omfånget.
+- asynkron kod: Closures är användbara när du arbetar med asynkron kod eftersom de låter dig behålla tillgång till relevanta variabler även när de yttre funktionerna har avslutats.
+- "factory functions": Closures kan användas för att skapa factory functions som genererar anpassade funktioner med specifika parametrar.
 
-Callback-funktioner: Många callback-funktioner i Node.js använder closures för att hålla och använda data från det omgivande omfånget.
-
-Hantering av asynkronitet: Closures är användbara när du arbetar med asynkron kod eftersom de låter dig behålla tillgång till relevanta variabler även när de yttre funktionerna har avslutats.
-
-Skapa "factory functions": Closures kan användas för att skapa factory functions som genererar anpassade funktioner med specifika parametrar.
-
-Closures är en viktig del av JavaScript och kan vara mycket kraftfulla när de används på rätt sätt. De hjälper till att skapa mer modulär och återanvändbar kod.
+Till sist så är closures en struktur som kan vara mycket användbart om dessa används på rätt sätt - closures kan hjälpa till att skapa mer modulär och återanvändbar kod.
 
 ---
 
