@@ -26,16 +26,17 @@ Argumenten gör funktionen mer flexibel genom att tillåta olika värden att ski
 Exempel:
 
 ```javascript
+//name är en parameter i funktionen greet
 function greet(name) {
     console.log("Hej, " + name + "!");
 }
 
-greet("Alice"); // Output: Hej, Alice!
+greet("Arne"); // Strängen "Arne" är ett argument vid anropet till funktionen greet. Output blir: Hej, Arne!
 ```
 
 ### Funktioner returnerar värden:
 
-Funktioner kan returnera ett värde efter att de har utfört sin uppgift.
+Funktioner kan returnera ett värde efter att de har utfört sin uppgift - returvärdet skickas "tillbaka" (svarsvärde) och det görs med keyword **return**.
 Det returnerade värdet kan användas eller sparas för senare användning.
 
 Exempel:
