@@ -1,0 +1,12 @@
+{
+  "name": "01---vars_datatypes_operands",
+  "version": "1.0.0",
+  "description": "Längst ned i den här filen finns ett antal övningar.",
+  "main": "vars.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

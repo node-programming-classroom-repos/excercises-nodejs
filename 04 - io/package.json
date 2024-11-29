@@ -1,0 +1,12 @@
+{
+  "name": "04---io",
+  "version": "1.0.0",
+  "description": "Input/Output (I/O) i Node.js hänvisar till hur programmet hanterar inmatning (input) och utmatning (output). Node.js har inbyggda funktioner för att interagera med filsystemet, läsa användarinmatning från konsolen och kommunicera med nätverket. Dessa funktioner är avgörande för att bygga robusta och interaktiva program.",
+  "main": "facit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
