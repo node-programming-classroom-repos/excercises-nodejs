@@ -29,20 +29,22 @@ Här är några exempel på OOP-koncept och hur de kan implementeras med Node.js
 
 ### Klasser och objekt (classes, objects)
 
-    class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+```javascript
+class Person {
+constructor(name, age) {
+    this.name = name;
+    this.age = age;
+}
 
-    sayHello() {
-        console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
-    }
-    }
+sayHello() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+}
+}
+```
 
 
-    const john = new Person('John', 30);
-    john.sayHello(); // Output: "Hello, my name is John and I'm 30 years old."
+const john = new Person('John', 30);
+john.sayHello(); // Output: "Hello, my name is John and I'm 30 years old."
 
 I detta exempel definierar vi en Person-klass med en konstruktor som tar ett namn och en ålder som argument. Vi definierar också en sayHello-metod som skriver ut en hälsning med personens namn och ålder. Vi skapar sedan ett nytt Person-objekt med namnet "John" och åldern 30, och anropar sayHello-metoden på det.
 
