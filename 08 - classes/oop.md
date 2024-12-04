@@ -48,84 +48,87 @@ I detta exempel definierar vi en Person-klass med en konstruktor som tar ett nam
 
 ### Arv (inheritance)
 
-
-    class Animal {
-        constructor(name) {
-            this.name = name;
-        }
-
-        speak() {
-            console.log(`${this.name} makes a noise.`);
-        }
+```javascript
+class Animal {
+    constructor(name) {
+        this.name = name;
     }
 
-
-    class Dog extends Animal {
-        speak() {
-            console.log(`${this.name} barks.`);
-        }
+    speak() {
+        console.log(`${this.name} makes a noise.`);
     }
+}
 
 
-    const dog = new Dog('Rufus');
-    dog.speak(); // Output: "Rufus barks."
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+
+const dog = new Dog('Rufus');
+dog.speak(); // Output: "Rufus barks."
+```
 
 I detta exempel definierar vi en Animal-klass med en konstruktor som tar ett namn som argument och en speak-metod som skriver ut ett ljud. Vi definierar sedan en Dog-klass som ärver från Animal-klassen och överskriver speak-metoden för att skriva ut att hunden skäller istället för att bara göra ett ljud. Vi skapar sedan ett nytt Dog-objekt med namnet "Rufus" och anropar speak-metoden på det.
 
 ### Abstraktion (abstraction)
 
 
-
-    class Rectangle extends Shape {
-        constructor(width, height) {
-            super();
-            this.width = width;
-            this.height = height;
-        }
-
-        getArea() {
-            return this.width * this.height;
-        }
+```javascript
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
     }
 
+    getArea() {
+        return this.width * this.height;
+    }
+}
 
-    // const shape = new Shape(); // Throws an error
-    const rectangle = new Rectangle(10, 20);
-    console.log(rectangle.getArea()); // Output: 200
+
+// const shape = new Shape(); // Throws an error
+const rectangle = new Rectangle(10, 20);
+console.log(rectangle.getArea()); // Output: 200
+```
 
 I detta exempel definierar vi en Shape-klass som är abstrakt, vilket betyder att den inte kan instansieras direkt utan måste ärvas av en annan klass. Vi kastar ett fel om någon försöker instansiera Shape direkt. Vi definierar sedan en Rectangle-klass som ärver från Shape-klassen och implementerar getArea-metoden för att beräkna rektangelns area. Vi skapar sedan ett nytt Rectangle-objekt med bredden 10 och höjden 20, och anropar getArea-metoden på det.
 
 ### Inkapsling (encapsulation)
 
-
-    class BankAccount {
-        constructor(balance) {
-            this._balance = balance;
-        }
-
-        get balance() {
-            return this._balance;
-        }
-
-        deposit(amount) {
-            this._balance += amount;
-        }
-
-        withdraw(amount) {
-            if (amount > this._balance) {
-            throw new Error('Insufficient funds.');
-            }
-            this._balance -= amount;
-        }
+```javascript
+class BankAccount {
+    constructor(balance) {
+        this._balance = balance;
     }
 
+    get balance() {
+        return this._balance;
+    }
 
-    const account = new BankAccount(1000);
-    console.log(account.balance); // Output: 1000
-    account.deposit(500);
-    console.log(account.balance); // Output: 1500
-    account.withdraw(200);
-    console.log(account.balance); // Output: 1300
+    deposit(amount) {
+        this._balance += amount;
+    }
+
+    withdraw(amount) {
+        if (amount > this._balance) {
+        throw new Error('Insufficient funds.');
+        }
+        this._balance -= amount;
+    }
+}
+
+
+const account = new BankAccount(1000);
+console.log(account.balance); // Output: 1000
+account.deposit(500);
+console.log(account.balance); // Output: 1500
+account.withdraw(200);
+console.log(account.balance); // Output: 1300
+```
 
 I detta exempel definierar vi en BankAccount-klass med en konstruktor som tar ett saldo som argument. Vi definierar också en balance-getter som returnerar saldot, och deposit- och withdraw-metoder för att sätta in och ta ut pengar från kontot. Vi använder en _balance-variabel med ett understreck för att indikera att den är privat och inte ska ändras direkt från utsidan av klassen. Vi skapar sedan ett nytt BankAccount-objekt med ett saldo på 1000, sätter in 500 och tar ut 200, och skriver ut saldot efter varje transaktion. Dessa exempel visar några av de grundläggande OOP-koncepten och hur de kan implementeras med Node.js. Det finns många fler koncept och tekniker inom OOP som kan användas för att skapa robusta och skalbara program.
 
