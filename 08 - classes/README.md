@@ -163,39 +163,39 @@ Det här exemplet representerar komponenter i en dator: Computer, CPU och Memory
 
 ```javascript    
 class CPU {
-constructor(model) {
-    this.model = model;
-}
-
-executeInstruction() {
-    console.log(`${this.model} is executing an instruction.`);
-}
+    constructor(model) {
+        this.model = model;
+    }
+    
+    executeInstruction() {
+        console.log(`${this.model} is executing an instruction.`);
+    }
 }
 
 
 class Memory {
-constructor(sizeGB) {
-    this.sizeGB = sizeGB;
-}
-
-readData() {
-    console.log(`Reading data from ${this.sizeGB}GB memory.`);
-}
+    constructor(sizeGB) {
+        this.sizeGB = sizeGB;
+    }
+    
+    readData() {
+        console.log(`Reading data from ${this.sizeGB}GB memory.`);
+    }
 }
 
 // Computer-klassen representerar hela datorsystemet och har en relation med CPU och Memory
 class Computer {
-constructor(cpu, memory) {
-    this.cpu = cpu;
-    this.memory = memory;
-}
-
-start() {
-    console.log(`Computer starting...`);
-    this.cpu.executeInstruction();
-    this.memory.readData();
-    console.log(`Computer started.`);
-}
+    constructor(cpu, memory) {
+        this.cpu = cpu;
+        this.memory = memory;
+    }
+    
+    start() {
+        console.log(`Computer starting...`);
+        this.cpu.executeInstruction();
+        this.memory.readData();
+        console.log(`Computer started.`);
+    }
 }
 
 // skapa instanser av CPU och Memory
